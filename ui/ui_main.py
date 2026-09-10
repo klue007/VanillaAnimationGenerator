@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainLvCIKI.ui'
+## Form generated from reading UI file 'mainHtANab.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.11.2
 ##
@@ -772,7 +772,7 @@ class Ui_Form(object):
         self.pushButton.setText(QCoreApplication.translate("Form", u"\u5bfc\u51fa", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_5), QCoreApplication.translate("Form", u"\u5bfc\u51fa", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_piano), QCoreApplication.translate("Form", u"Minecraft\u94a2\u7434", None))
-        self.label_26.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" font-size:18pt; font-weight:700;\">Minecraft \u539f\u751f\u52a8\u753b\u751f\u6210\u5668</span></p><p><span style=\" font-size:14pt;\">Minecraft Vanilla Animation Generator</span></p><p><span style=\" font-size:12pt;\">\u7a0b\u5e8f\u7248\u672c\uff1av1.0.0</span></p><p><span style=\" font-size:12pt;\">\u7a0b\u5e8f\u521b\u5efa\u8005\uff1a</span><span style=\" font-size:12pt; font-weight:700;\">klue007</span></p><p><span style=\" font-size:12pt;\">\u8be5\u7a0b\u5e8f\u7528\u4e8e\u751f\u6210Minecraft\u539f\u7248\u6570\u636e\u5305\uff0c\u4ee5\u5728\u6e38\u620f\u5185</span></p><p><span style=\" font-size:12pt;\">\u5b9e\u73b0\u4f8b\u5982\u94a2\u7434\u6f14\u594f\u7b49\u57fa\u4e8e\u539f\u7248\u6307\u4ee4\u7684\u52a8\u753b\u6548\u679c\u3002</span></p><p><br/></p></body></html>", None))
+        self.label_26.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" font-size:18pt; font-weight:700;\">Minecraft \u539f\u751f\u52a8\u753b\u751f\u6210\u5668</span></p><p><span style=\" font-size:14pt;\">Minecraft Vanilla Animation Generator</span></p><p><span style=\" font-size:12pt;\">\u7a0b\u5e8f\u7248\u672c\uff1av1.0.1</span></p><p><span style=\" font-size:12pt;\">\u7a0b\u5e8f\u521b\u5efa\u8005\uff1a</span><span style=\" font-size:12pt; font-weight:700;\">klue007</span></p><p><span style=\" font-size:12pt;\">\u8be5\u7a0b\u5e8f\u7528\u4e8e\u751f\u6210Minecraft\u539f\u7248\u6570\u636e\u5305\uff0c\u4ee5\u5728\u6e38\u620f\u5185</span></p><p><span style=\" font-size:12pt;\">\u5b9e\u73b0\u4f8b\u5982\u94a2\u7434\u6f14\u594f\u7b49\u57fa\u4e8e\u539f\u7248\u6307\u4ee4\u7684\u52a8\u753b\u6548\u679c\u3002</span></p><p><br/></p></body></html>", None))
         self.textBrowser_2.setHtml(QCoreApplication.translate("Form", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
