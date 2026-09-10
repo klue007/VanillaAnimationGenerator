@@ -1,0 +1,5 @@
+
+resources/*
+genpy.py
+*.pyc
+output/*
