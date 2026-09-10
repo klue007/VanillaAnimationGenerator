@@ -1,5 +1,44 @@
 
 import os
+from pathlib import Path
+from .logger import Logger
+
+def backup_folder_name(original_path: str | Path, logger: Logger) -> bool:
+    """
+
+    If the target folder already exists, append the suffix _OLD to its name. In case of naming conflicts, sequentially try appending _OLD2, _OLD3, and so on until an available name is found.
+    
+    Args:
+        target_path: (str | Path)
+        logger: (Logger) 
+
+    """
+    p = Path(original_path)
+    if not p.is_dir():
+        return True
+
+    base_parent = p.parent
+    base_name = p.name
+    new_name = f"{base_name}_OLD"
+    new_p = base_parent / new_name
+    counter = 2
+
+    while new_p.exists():
+        new_name = f"{base_name}_OLD{counter}"
+        new_p = base_parent / new_name
+        counter += 1
+
+    try:
+        p.rename(new_p)
+        if logger:
+            logger.log_warn(f"旧数据包文件夹已更名备份: {p} → {new_p}")
+        return True
+    except Exception as e:
+        if logger:
+            logger.log_error(f"备份旧文件夹失败: {str(e)}")
+        return False
+
+
 
 class DatapackManager():
     """
@@ -8,7 +47,7 @@ class DatapackManager():
 
     """
 
-    def __init__(self, datapack_name: str, datapack_version: int):
+    def __init__(self, datapack_name: str, datapack_version: int, logger: Logger):
         """
         Args:
             datapack_name : (str)
@@ -20,9 +59,12 @@ class DatapackManager():
         self.datapack_name = datapack_name
         self.datapack_version = datapack_version
 
-        self.write_mcmeta()
-        self.create_load_function()
-        self.create_tick_function()
+        self.is_backuped = backup_folder_name(os.path.join("output",self.datapack_name), logger)
+
+        if self.is_backuped:
+            self.write_mcmeta()
+            self.create_load_function()
+            self.create_tick_function()
 
 
     
