@@ -28,7 +28,7 @@ def get_timeline(note_list: list[Note], block_list: BlockGroup, config: PianoCon
     current_note_index = 0
     block_tag_number = 0
     note_list_len = len(note_list)
-    logger.log_info("正在计算方块动画实体...")
+    logger.log_info("正在生成命令...")
 
     for note in note_list:
         current_note_index += 1
@@ -50,7 +50,7 @@ def get_timeline(note_list: list[Note], block_list: BlockGroup, config: PianoCon
 
     if config.displayer == 1:
         output_timeline.merge_absolute(get_displayer_timeline(note_list, config))
-    logger.log_success("完成!")
+    logger.log_success("所有命令已生成!")
     return output_timeline
 
 def write_datapack(datapack: DatapackManager, scoreboard_name: str, config:PianoConfig):
@@ -86,10 +86,10 @@ def get_error(note_list:list[Note]):
 
 def piano_main(cfg:PianoConfig, logger: Logger):
 
+    logger.log("\n")
     logger.log_info("钢琴键盘预设已加载!")
     logger.set_progress(0)
 
-    block_list = BlockGroup(None, None)
     try:
         note_list = midi_parse(MidiFile(cfg.midi_path),cfg)
         note_list_len = len(note_list)
@@ -101,22 +101,26 @@ def piano_main(cfg:PianoConfig, logger: Logger):
         logger.log_error("Midi文件({})读取失败: {}".format(cfg.midi_path, str(e)))
         return
 
-    if cfg.block_splits > note_list_len:
-        logger.log_error("方块抛射波数({})大于音符总数({}), 部分方块可能无法生成, 请尝试降低方块抛射波数!".format(cfg.block_splits, note_list_len))
-    else:
-        logger.log_success("方块抛射波数({})小于音符总数({}), 所有方块均可被生成.".format(cfg.block_splits, note_list_len))
+    block_list = BlockGroup(None, None)
+    if cfg.block_painting == 1:
+        try:
+            block_list = BlockGroup(cfg.block_path, cfg.painting_base_pos)
+            block_list.sort_by_axis("y")
+            block_num = len(block_list.get_list())
+            if block_num > 0:
+                logger.log_success(f"方块文件加载已加载, 总方块数: {block_num}.")
+            else:
+                logger.log_warn(f"加载的方块列表为空, 可能是加载时出现异常.")
+        except Exception as e:
+            logger.log_error(f"加载方块文件时出现错误: {str(e)}")
 
-    try:
-        block_list = BlockGroup(cfg.block_path, cfg.painting_base_pos)
-        block_list.sort_by_axis("y")
-    except Exception as e:
-        logger.log_error(f"加载方块文件时出现错误: {str(e)}")
-
-    block_num = len(block_list.get_list())
-    if block_num > 0:
-        logger.log_success(f"方块文件加载已加载, 总方块数: {block_num}.")
+        if cfg.block_splits > note_list_len:
+            logger.log_error("方块抛射波数({})大于音符总数({}), 部分方块可能无法生成, 请尝试降低方块抛射波数!".format(cfg.block_splits, note_list_len))
+        else:
+            logger.log_success("方块抛射波数({})小于音符总数({}), 所有方块均可被生成.".format(cfg.block_splits, note_list_len))
     else:
-        logger.log_warn(f"加载的方块列表为空, 可能是加载时出现异常.")
+        logger.log_warn(f"未启用方块抛射绘画, 将跳过方块文件加载.")
+
     
     max_error, avg_error = get_error(note_list)
     logger.log_warn("音符时间误差:".format(max_error,avg_error))
@@ -124,7 +128,9 @@ def piano_main(cfg:PianoConfig, logger: Logger):
     logger.log_warn("   平均误差: {:.6f}ms".format(avg_error))
 
     piano_timeline = get_timeline(note_list, block_list, cfg, logger)
-    datapack = DatapackManager(cfg.datapack_name, cfg.datapack_version)
+    datapack = DatapackManager(cfg.datapack_name, cfg.datapack_version, logger)
+    if datapack.is_backuped == False:
+        return
     piano_timeline.write_datapack(datapack, cfg.datapack_name + "_timer", logger)
     write_datapack(datapack, cfg.datapack_name + "_timer", cfg)
     logger.log_success(f"数据包已生成! 位置: output/" + cfg.datapack_name)
