@@ -133,14 +133,14 @@ class Timeline():
         max_tick = max(self.timeline_diction.keys())
     
         # generate tick event functions as evt_xxxx.mcfunction
-        logger.log_info("正在将动画指令写入数据包...")
+        logger.log_info("正在将动画命令写入数据包...")
         timeline_len = len(self.timeline_diction)
         index = 0
         for tick, commands in self.timeline_diction.items():
             index += 1
             logger.set_progress(index/timeline_len)
             datapack.write_function_file(os.path.join("evt", f"{tick + 2}.mcfunction"), commands)
-        logger.log_success("动画指令已写入!")
+        logger.log_success("动画命令已写入!")
     
         # loop.mcfunction
         loop_lines = []

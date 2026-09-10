@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainWHPbSq.ui'
+## Form generated from reading UI file 'mainHtANab.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.11.2
 ##
@@ -772,7 +772,7 @@ class Ui_Form(object):
         self.pushButton.setText(QCoreApplication.translate("Form", u"\u5bfc\u51fa", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_5), QCoreApplication.translate("Form", u"\u5bfc\u51fa", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_piano), QCoreApplication.translate("Form", u"Minecraft\u94a2\u7434", None))
-        self.label_26.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" font-size:18pt; font-weight:700;\">Minecraft \u539f\u751f\u52a8\u753b\u751f\u6210\u5668</span></p><p><span style=\" font-size:14pt;\">Minecraft Vanilla Animation Generator</span></p><p><span style=\" font-size:12pt;\">\u7a0b\u5e8f\u7248\u672c\uff1av1.0.0</span></p><p><span style=\" font-size:12pt;\">\u7a0b\u5e8f\u521b\u5efa\u8005\uff1a</span><span style=\" font-size:12pt; font-weight:700;\">klue007</span></p><p><span style=\" font-size:12pt;\">\u8be5\u7a0b\u5e8f\u7528\u4e8e\u751f\u6210Minecraft\u539f\u7248\u6570\u636e\u5305\uff0c\u4ee5\u5728\u6e38\u620f\u5185</span></p><p><span style=\" font-size:12pt;\">\u5b9e\u73b0\u4f8b\u5982\u94a2\u7434\u6f14\u594f\u7b49\u57fa\u4e8e\u539f\u7248\u6307\u4ee4\u7684\u52a8\u753b\u6548\u679c\u3002</span></p><p><br/></p></body></html>", None))
+        self.label_26.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" font-size:18pt; font-weight:700;\">Minecraft \u539f\u751f\u52a8\u753b\u751f\u6210\u5668</span></p><p><span style=\" font-size:14pt;\">Minecraft Vanilla Animation Generator</span></p><p><span style=\" font-size:12pt;\">\u7a0b\u5e8f\u7248\u672c\uff1av1.0.1</span></p><p><span style=\" font-size:12pt;\">\u7a0b\u5e8f\u521b\u5efa\u8005\uff1a</span><span style=\" font-size:12pt; font-weight:700;\">klue007</span></p><p><span style=\" font-size:12pt;\">\u8be5\u7a0b\u5e8f\u7528\u4e8e\u751f\u6210Minecraft\u539f\u7248\u6570\u636e\u5305\uff0c\u4ee5\u5728\u6e38\u620f\u5185</span></p><p><span style=\" font-size:12pt;\">\u5b9e\u73b0\u4f8b\u5982\u94a2\u7434\u6f14\u594f\u7b49\u57fa\u4e8e\u539f\u7248\u6307\u4ee4\u7684\u52a8\u753b\u6548\u679c\u3002</span></p><p><br/></p></body></html>", None))
         self.textBrowser_2.setHtml(QCoreApplication.translate("Form", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -780,10 +780,18 @@ class Ui_Form(object):
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:700;\">\u66f4\u65b0\u65e5\u5fd7</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:700;\">v1.0.0</span> (2026.9.10)</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent"
-                        ":0; text-indent:0px;\">- \u6dfb\u52a0\u94a2\u7434\u52a8\u753b\u751f\u6210\u6a21\u5757</p></body></html>", None))
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:700;\">\u66f4\u65b0\u65e5\u5fd7</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span"
+                        " style=\" font-size:11pt; font-weight:700;\">v1.0.1</span><span style=\" font-size:11pt;\"> (2026.9.10)</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">- \u73b0\u5728\u5728\u672a\u542f\u7528\u94a2\u7434\u52a8\u753b\u751f\u6210\u6a21\u5757\u7684\u65b9\u5757\u629b\u5c04\u7ed8\u753b\u529f\u80fd\u65f6\uff0c\u5141\u8bb8\u4e0d\u9009\u62e9.schem\u6587\u4ef6</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">- \u73b0\u5728\u5728\u8f93\u5165\u4e86\u542b\u6709\u7a7a\u683c\u6216\u4e2d\u6587\u7684\u6570\u636e\u5305\u540d\u79f0\u540e\u5bfc\u51fa\u4f1a\u63d0\u793a\u9519\u8bef\u5e76\u7ec8\u6b62\u5bfc\u51fa</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">- \u73b0\u5728\u5982\u679c\u5bfc\u51fa\u6570\u636e\u5305\u7684\u4f4d\u7f6e\u5df2\u7ecf\u6709\u4e86\u540c\u540d\u79f0\u7684\u6570\u636e"
+                        "\u5305\uff0c\u4f1a\u5c06\u5df2\u6709\u7684\u6570\u636e\u5305\u6539\u540d\u4ee5\u9632\u6b62\u6587\u4ef6\u8bfb\u5199\u9519\u8bef</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:700;\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:700;\">v1.0.0</span><span style=\" font-size:11pt;\"> (2026.9.10)</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">- \u6dfb\u52a0\u94a2\u7434\u52a8\u753b\u751f\u6210\u6a21\u5757</p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_6), QCoreApplication.translate("Form", u"\u7248\u672c", None))
     # retranslateUi
 

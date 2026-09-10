@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QApplication, QWidget
 from PySide6.QtGui import QTextCharFormat, QColor
 from PySide6.QtCore import QObject, Signal, Qt, QMetaObject
 import sys
+import re
 import threading
 from datetime import datetime
 from ui.ui_main import Ui_Form
@@ -145,7 +146,6 @@ class VAGWindow(QWidget):
         self.ui.spinBox_9.setValue(cfg.painting_base_pos[1])
         self.ui.spinBox_10.setValue(cfg.painting_base_pos[2])
         self.ui.spinBox_7.setValue(cfg.block_splits)
-        self.ui.lineEdit_2.setText(cfg.datapack_name)
 
     def on_export_finish(self):
         self.is_exporting = False
@@ -163,10 +163,12 @@ class VAGWindow(QWidget):
             return
 
         idx_block = self.ui.comboBox_2.currentIndex()
-        if idx_block < 0:
+        cfg.block_painting = 1 if self.ui.checkBox_2.isChecked() else 0
+        if idx_block < 0 and cfg.block_painting == 1:
             self.piano_logger.log_error("请选择方块文件!")
             return
-        cfg.block_path = self.block_file_list[idx_block][1]
+        else:
+            cfg.block_path = self.block_file_list[idx_block][1] if idx_block >= 0 else ""
 
         idx_midi = self.ui.comboBox_3.currentIndex()
         if idx_midi < 0:
@@ -185,7 +187,6 @@ class VAGWindow(QWidget):
         cfg.displayer_count_right = self.ui.spinBox_2.value()
         cfg.displayer_max_moving_tick = self.ui.spinBox_3.value()
         cfg.displayer_peak_height = self.ui.doubleSpinBox.value()
-        cfg.block_painting = 1 if self.ui.checkBox_2.isChecked() else 0
         cfg.motion_y = self.ui.doubleSpinBox_4.value()
         cfg.motion_y_random = self.ui.doubleSpinBox_5.value()
         cfg.painting_base_pos = [
@@ -195,12 +196,25 @@ class VAGWindow(QWidget):
         ]
         cfg.block_splits = self.ui.spinBox_7.value()
         cfg.datapack_name = self.ui.lineEdit_2.text()
+        if cfg.datapack_name == "":
+            self.piano_logger.log_error("数据包名称不能为空!")
+            return
+        elif " " in cfg.datapack_name:
+            self.piano_logger.log_error("数据包名称中不可含有空格!")
+            return
+        elif bool(re.compile(r'[\u4e00-\u9fff]').search(cfg.datapack_name)):
+            self.piano_logger.log_error("数据包名称中不可含有中文!")
+            return
+        else:
+            self.piano_logger.log("\n")
+            self.piano_logger.log_info("数据包名称: " + cfg.datapack_name)
 
         self.is_exporting = True
         self.ui.pushButton.setEnabled(False)
         self.piano_logger.log_info(f"生成数据包使用的文件: ")
-        self.piano_logger.log_info(f"方块文件: {cfg.block_path}")
-        self.piano_logger.log_info(f"MIDI文件: {cfg.midi_path}")
+        if cfg.block_painting == 1:
+            self.piano_logger.log_info(f"   方块文件: {cfg.block_path}")
+        self.piano_logger.log_info(f"   MIDI文件: {cfg.midi_path}")
 
         def export_task():
             try:
