@@ -5,11 +5,14 @@ from .block import Block
 from .block import BlockGroup
 from .falling_block import falling_block_calculate
 from .logger import Logger
+from .mcuuid import MCUUID, MCUUIDManager
 
 __all__ = [
     "DatapackManager",
     "Timeline","Block",
     "falling_block_calculate",
     "BlockGroup",
-    "Logger"
+    "Logger",
+    "MCUUID",
+    "MCUUIDManager"
 ]

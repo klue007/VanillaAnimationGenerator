@@ -1,7 +1,5 @@
 from .timeline import Timeline
 from .block import Block
-import math
-import random
 
 def calc_y_pos(T: int, y1: float, vy0: float) -> float:
     q = 0.98

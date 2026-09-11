@@ -14,6 +14,7 @@ from src.piano.config import PianoConfig
 from src.util import Logger
 import time
 from src.piano.waterfall import get_waterfall_timeline
+from src.util import MCUUIDManager
 
 def split_list(lst: list[Block], x: int):
     it = iter(lst)
@@ -92,6 +93,8 @@ def piano_main(cfg:PianoConfig, logger: Logger):
     logger.log_info("钢琴键盘预设已加载!")
     logger.set_progress(0)
 
+    uuid_manager = MCUUIDManager()
+
     try:
         note_list = midi_parse(MidiFile(cfg.midi_path),cfg)
         note_list_len = len(note_list)
@@ -135,7 +138,7 @@ def piano_main(cfg:PianoConfig, logger: Logger):
     if cfg.waterfall:
         try:
             waterfall_tick_shift = note_list[0].mc_tick - cfg.waterfall_tick
-            waterfall_timeline = get_waterfall_timeline(note_list, cfg)
+            waterfall_timeline = get_waterfall_timeline(note_list, cfg, uuid_manager)
             piano_timeline.merge_absolute(waterfall_timeline)
             logger.log_success(f"已生成瀑布流命令!")
             if waterfall_tick_shift <= 0:
