@@ -20,7 +20,7 @@ class Timeline():
         self.timeline_diction = timeline_diction
 
 
-    def merge_absolute(self, target_timeline: Timeline):
+    def merge(self, target_timeline: Timeline):
         """
         Merge another timeline into this one.
 
@@ -35,27 +35,6 @@ class Timeline():
                 self.timeline_diction[key].extend(value)
             else:
                 self.timeline_diction[key] = value.copy()
-
-
-
-    def merge_relative(self, target_timeline: Timeline, start_tick: int):
-        """
-        Merge another timeline into this one using relative time offset.
-
-        The target timeline's tick events will be offset by start_tick.
-        Commands from events occurring at the same tick will be appended to that tick's existing command set.
-
-        Args:
-            target_timeline : (Timeline)
-                Source timeline to merge into the current instance.
-
-            start_tick : (int)
-                The time offset.
-        """
-        target_timeline_backup = copy.deepcopy(target_timeline)
-        target_timeline_backup.shift_time(start_tick)
-        self.merge_absolute(target_timeline_backup)
-
 
 
     def shift_time(self, delta_tick: int):
@@ -74,14 +53,11 @@ class Timeline():
         self.timeline_diction = new_diction
 
 
-
-
     def len(self):
         """
         Get the amount of tick events.
         """
         return len(self.timeline_diction)
-
 
 
     def get_command(self, tick, return_as_list = True):
@@ -105,7 +81,6 @@ class Timeline():
             return "\n".join(command_list)
 
 
-
     def add_command(self, tick: int, command: str | list[str]):
         """
         Add one or multiple commands to the timeline at a given tick.
@@ -126,6 +101,13 @@ class Timeline():
         else:
             self.timeline_diction[tick].append(command)
 
+
+    def get_last_tick(self):
+        return max(self.timeline_diction.keys())
+
+
+    def get_first_tick(self):
+        return min(self.timeline_diction.keys())
 
 
     def write_datapack(self, datapack: DatapackManager, scoreboard_name: str, logger: Logger):

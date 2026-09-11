@@ -73,7 +73,8 @@ class VAGWindow(QWidget):
         self.midi_file_list: list[tuple[str, str]] = []
 
         self.ui.comboBox.clear()
-        self.ui.comboBox.addItems(["大型方块键盘", "小型键盘", "小型涡旋键盘"])
+        self.ui.comboBox.addItems(["大型方块键盘", "小型键盘", "涡旋键盘", "大型键盘"])
+        self.ui.comboBox_4.addItems(["竖直", "水平"])
         self.piano_load_preset(0)
         self.piano_update_block_files(True)
         self.piano_update_midi_files(True)
@@ -117,11 +118,13 @@ class VAGWindow(QWidget):
                 self.piano_logger.log_error("你未设置钢琴键盘预设!")
                 return
             case 0:
-                cfg = PianoConfig(presets.piano)
+                cfg = presets.piano
             case 1:
-                cfg = PianoConfig(presets.piano_mini)
+                cfg = presets.piano_mini
             case 2:
-                cfg = PianoConfig(presets.piano_vortex)
+                cfg = presets.piano_vortex
+            case 3:
+                cfg = presets.piano_large
         return cfg
 
     def piano_load_preset(self, index: int):
@@ -133,19 +136,28 @@ class VAGWindow(QWidget):
         self.ui.doubleSpinBox_2.setValue(cfg.min_volume)
         self.ui.spinBox_5.setValue(cfg.note_dur_extra_ms)
         self.ui.spinBox_6.setValue(cfg.delay_ms)
-        self.ui.checkBox.setChecked(cfg.displayer == 1)
+        self.ui.checkBox.setChecked(cfg.displayer)
         self.ui.lineEdit.setText(cfg.displayer_block)
         self.ui.spinBox.setValue(cfg.displayer_count_left)
         self.ui.spinBox_2.setValue(cfg.displayer_count_right)
         self.ui.spinBox_3.setValue(cfg.displayer_max_moving_tick)
         self.ui.doubleSpinBox.setValue(cfg.displayer_peak_height)
-        self.ui.checkBox_2.setChecked(cfg.block_painting == 1)
+        self.ui.checkBox_2.setChecked(cfg.block_painting)
         self.ui.doubleSpinBox_4.setValue(cfg.motion_y)
         self.ui.doubleSpinBox_5.setValue(cfg.motion_y_random)
         self.ui.spinBox_8.setValue(cfg.painting_base_pos[0])
         self.ui.spinBox_9.setValue(cfg.painting_base_pos[1])
         self.ui.spinBox_10.setValue(cfg.painting_base_pos[2])
         self.ui.spinBox_7.setValue(cfg.block_splits)
+        self.ui.checkBox_3.setChecked(cfg.waterfall)
+        self.ui.comboBox_4.setCurrentIndex(cfg.waterfall_mode)
+        self.ui.spinBox_11.setValue(cfg.waterfall_tick)
+        self.ui.doubleSpinBox_6.setValue(cfg.waterfall_height)
+        self.ui.lineEdit_3.setText(cfg.waterfall_block)
+        self.ui.doubleSpinBox_7.setValue(cfg.waterfall_block_size)
+        self.ui.spinBox_12.setValue(cfg.waterfall_block_transition_tick)
+        self.ui.checkBox_4.setChecked(cfg.block_painting_use_display_entity)
+        self.ui.doubleSpinBox_8.setValue(cfg.displayer_size)
 
     def on_export_finish(self):
         self.is_exporting = False
@@ -163,8 +175,8 @@ class VAGWindow(QWidget):
             return
 
         idx_block = self.ui.comboBox_2.currentIndex()
-        cfg.block_painting = 1 if self.ui.checkBox_2.isChecked() else 0
-        if idx_block < 0 and cfg.block_painting == 1:
+        cfg.block_painting = self.ui.checkBox_2.isChecked()
+        if idx_block < 0 and cfg.block_painting:
             self.piano_logger.log_error("请选择方块文件!")
             return
         else:
@@ -181,8 +193,9 @@ class VAGWindow(QWidget):
         cfg.min_volume = self.ui.doubleSpinBox_2.value()
         cfg.note_dur_extra_ms = self.ui.spinBox_5.value()
         cfg.delay_ms = self.ui.spinBox_6.value()
-        cfg.displayer = 1 if self.ui.checkBox.isChecked() else 0
+        cfg.displayer = self.ui.checkBox.isChecked()
         cfg.displayer_block = self.ui.lineEdit.text()
+        cfg.displayer_size = self.ui.doubleSpinBox_8.value()
         cfg.displayer_count_left = self.ui.spinBox.value()
         cfg.displayer_count_right = self.ui.spinBox_2.value()
         cfg.displayer_max_moving_tick = self.ui.spinBox_3.value()
@@ -209,10 +222,20 @@ class VAGWindow(QWidget):
             self.piano_logger.log("\n")
             self.piano_logger.log_info("数据包名称: " + cfg.datapack_name)
 
+        cfg.waterfall = self.ui.checkBox_3.isChecked()
+        cfg.waterfall_mode = self.ui.comboBox_4.currentIndex()
+        cfg.waterfall_tick = self.ui.spinBox_11.value()
+        cfg.waterfall_height = self.ui.doubleSpinBox_6.value()
+        cfg.waterfall_block = self.ui.lineEdit_3.text()
+        cfg.waterfall_block_size = self.ui.doubleSpinBox_7.value()
+        cfg.waterfall_block_transition_tick = self.ui.spinBox_12.value()
+
+        cfg.block_painting_use_display_entity = self.ui.checkBox_4.isChecked()
+
         self.is_exporting = True
         self.ui.pushButton.setEnabled(False)
         self.piano_logger.log_info(f"生成数据包使用的文件: ")
-        if cfg.block_painting == 1:
+        if cfg.block_painting:
             self.piano_logger.log_info(f"   方块文件: {cfg.block_path}")
         self.piano_logger.log_info(f"   MIDI文件: {cfg.midi_path}")
 

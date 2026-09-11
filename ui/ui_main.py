@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainHtANab.ui'
+## Form generated from reading UI file 'mainFNbPCs.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.11.2
 ##
@@ -326,6 +326,23 @@ class Ui_Form(object):
 
         self.verticalLayout_12.addLayout(self.horizontalLayout_6)
 
+        self.horizontalLayout_31 = QHBoxLayout()
+        self.horizontalLayout_31.setObjectName(u"horizontalLayout_31")
+        self.label_33 = QLabel(self.tab_2)
+        self.label_33.setObjectName(u"label_33")
+        sizePolicy1.setHeightForWidth(self.label_33.sizePolicy().hasHeightForWidth())
+        self.label_33.setSizePolicy(sizePolicy1)
+
+        self.horizontalLayout_31.addWidget(self.label_33)
+
+        self.doubleSpinBox_8 = QDoubleSpinBox(self.tab_2)
+        self.doubleSpinBox_8.setObjectName(u"doubleSpinBox_8")
+
+        self.horizontalLayout_31.addWidget(self.doubleSpinBox_8)
+
+
+        self.verticalLayout_12.addLayout(self.horizontalLayout_31)
+
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.label_3 = QLabel(self.tab_2)
@@ -374,6 +391,8 @@ class Ui_Form(object):
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
         self.verticalLayout_16 = QVBoxLayout()
         self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.verticalLayout_19 = QVBoxLayout()
+        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
         self.checkBox_2 = QCheckBox(self.tab_3)
         self.checkBox_2.setObjectName(u"checkBox_2")
         sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
@@ -382,7 +401,28 @@ class Ui_Form(object):
         sizePolicy4.setHeightForWidth(self.checkBox_2.sizePolicy().hasHeightForWidth())
         self.checkBox_2.setSizePolicy(sizePolicy4)
 
-        self.verticalLayout_16.addWidget(self.checkBox_2)
+        self.verticalLayout_19.addWidget(self.checkBox_2)
+
+
+        self.verticalLayout_16.addLayout(self.verticalLayout_19)
+
+        self.verticalLayout_18 = QVBoxLayout()
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.checkBox_4 = QCheckBox(self.tab_3)
+        self.checkBox_4.setObjectName(u"checkBox_4")
+
+        self.verticalLayout_18.addWidget(self.checkBox_4)
+
+        self.label_32 = QLabel(self.tab_3)
+        self.label_32.setObjectName(u"label_32")
+        sizePolicy3.setHeightForWidth(self.label_32.sizePolicy().hasHeightForWidth())
+        self.label_32.setSizePolicy(sizePolicy3)
+        self.label_32.setWordWrap(True)
+
+        self.verticalLayout_18.addWidget(self.label_32)
+
+
+        self.verticalLayout_16.addLayout(self.verticalLayout_18)
 
 
         self.horizontalLayout_15.addLayout(self.verticalLayout_16)
@@ -569,9 +609,149 @@ class Ui_Form(object):
         self.tabWidget_2.addTab(self.tab_3, "")
         self.tab_4 = QWidget()
         self.tab_4.setObjectName(u"tab_4")
+        self.horizontalLayout_20 = QHBoxLayout(self.tab_4)
+        self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
+        self.verticalLayout_14 = QVBoxLayout()
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.checkBox_3 = QCheckBox(self.tab_4)
+        self.checkBox_3.setObjectName(u"checkBox_3")
+
+        self.verticalLayout_14.addWidget(self.checkBox_3)
+
+
+        self.horizontalLayout_20.addLayout(self.verticalLayout_14)
+
+        self.line_4 = QFrame(self.tab_4)
+        self.line_4.setObjectName(u"line_4")
+        self.line_4.setFrameShadow(QFrame.Shadow.Plain)
+        self.line_4.setFrameShape(QFrame.Shape.VLine)
+
+        self.horizontalLayout_20.addWidget(self.line_4)
+
+        self.verticalLayout_17 = QVBoxLayout()
+        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
+        self.horizontalLayout_21 = QHBoxLayout()
+        self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
         self.label = QLabel(self.tab_4)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(20, 10, 151, 51))
+        sizePolicy1.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
+        self.label.setSizePolicy(sizePolicy1)
+
+        self.horizontalLayout_21.addWidget(self.label)
+
+        self.comboBox_4 = QComboBox(self.tab_4)
+        self.comboBox_4.setObjectName(u"comboBox_4")
+
+        self.horizontalLayout_21.addWidget(self.comboBox_4)
+
+
+        self.verticalLayout_17.addLayout(self.horizontalLayout_21)
+
+        self.horizontalLayout_24 = QHBoxLayout()
+        self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
+        self.label_27 = QLabel(self.tab_4)
+        self.label_27.setObjectName(u"label_27")
+        sizePolicy1.setHeightForWidth(self.label_27.sizePolicy().hasHeightForWidth())
+        self.label_27.setSizePolicy(sizePolicy1)
+
+        self.horizontalLayout_24.addWidget(self.label_27)
+
+        self.spinBox_11 = QSpinBox(self.tab_4)
+        self.spinBox_11.setObjectName(u"spinBox_11")
+        self.spinBox_11.setMaximum(1000)
+
+        self.horizontalLayout_24.addWidget(self.spinBox_11)
+
+
+        self.verticalLayout_17.addLayout(self.horizontalLayout_24)
+
+        self.horizontalLayout_27 = QHBoxLayout()
+        self.horizontalLayout_27.setObjectName(u"horizontalLayout_27")
+        self.label_28 = QLabel(self.tab_4)
+        self.label_28.setObjectName(u"label_28")
+        sizePolicy1.setHeightForWidth(self.label_28.sizePolicy().hasHeightForWidth())
+        self.label_28.setSizePolicy(sizePolicy1)
+
+        self.horizontalLayout_27.addWidget(self.label_28)
+
+        self.doubleSpinBox_6 = QDoubleSpinBox(self.tab_4)
+        self.doubleSpinBox_6.setObjectName(u"doubleSpinBox_6")
+        self.doubleSpinBox_6.setMaximum(1000.000000000000000)
+
+        self.horizontalLayout_27.addWidget(self.doubleSpinBox_6)
+
+
+        self.verticalLayout_17.addLayout(self.horizontalLayout_27)
+
+
+        self.horizontalLayout_20.addLayout(self.verticalLayout_17)
+
+        self.line_5 = QFrame(self.tab_4)
+        self.line_5.setObjectName(u"line_5")
+        self.line_5.setFrameShadow(QFrame.Shadow.Plain)
+        self.line_5.setFrameShape(QFrame.Shape.VLine)
+
+        self.horizontalLayout_20.addWidget(self.line_5)
+
+        self.verticalLayout_15 = QVBoxLayout()
+        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.horizontalLayout_28 = QHBoxLayout()
+        self.horizontalLayout_28.setObjectName(u"horizontalLayout_28")
+        self.label_29 = QLabel(self.tab_4)
+        self.label_29.setObjectName(u"label_29")
+        sizePolicy1.setHeightForWidth(self.label_29.sizePolicy().hasHeightForWidth())
+        self.label_29.setSizePolicy(sizePolicy1)
+
+        self.horizontalLayout_28.addWidget(self.label_29)
+
+        self.lineEdit_3 = QLineEdit(self.tab_4)
+        self.lineEdit_3.setObjectName(u"lineEdit_3")
+        sizePolicy3.setHeightForWidth(self.lineEdit_3.sizePolicy().hasHeightForWidth())
+        self.lineEdit_3.setSizePolicy(sizePolicy3)
+
+        self.horizontalLayout_28.addWidget(self.lineEdit_3)
+
+
+        self.verticalLayout_15.addLayout(self.horizontalLayout_28)
+
+        self.horizontalLayout_29 = QHBoxLayout()
+        self.horizontalLayout_29.setObjectName(u"horizontalLayout_29")
+        self.label_30 = QLabel(self.tab_4)
+        self.label_30.setObjectName(u"label_30")
+        sizePolicy1.setHeightForWidth(self.label_30.sizePolicy().hasHeightForWidth())
+        self.label_30.setSizePolicy(sizePolicy1)
+
+        self.horizontalLayout_29.addWidget(self.label_30)
+
+        self.doubleSpinBox_7 = QDoubleSpinBox(self.tab_4)
+        self.doubleSpinBox_7.setObjectName(u"doubleSpinBox_7")
+
+        self.horizontalLayout_29.addWidget(self.doubleSpinBox_7)
+
+
+        self.verticalLayout_15.addLayout(self.horizontalLayout_29)
+
+        self.horizontalLayout_30 = QHBoxLayout()
+        self.horizontalLayout_30.setObjectName(u"horizontalLayout_30")
+        self.label_31 = QLabel(self.tab_4)
+        self.label_31.setObjectName(u"label_31")
+        sizePolicy1.setHeightForWidth(self.label_31.sizePolicy().hasHeightForWidth())
+        self.label_31.setSizePolicy(sizePolicy1)
+
+        self.horizontalLayout_30.addWidget(self.label_31)
+
+        self.spinBox_12 = QSpinBox(self.tab_4)
+        self.spinBox_12.setObjectName(u"spinBox_12")
+        self.spinBox_12.setMaximum(1000)
+
+        self.horizontalLayout_30.addWidget(self.spinBox_12)
+
+
+        self.verticalLayout_15.addLayout(self.horizontalLayout_30)
+
+
+        self.horizontalLayout_20.addLayout(self.verticalLayout_15)
+
         self.tabWidget_2.addTab(self.tab_4, "")
         self.tab_5 = QWidget()
         self.tab_5.setObjectName(u"tab_5")
@@ -726,15 +906,17 @@ class Ui_Form(object):
                         "\u8d44\u6e90\u5305\u3002</p>\n"
 "<h4 style=\" margin-top:14px; margin-bottom:6px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:medium; font-weight:700;\">\u52a8\u753b\u64ad\u653e\u64cd\u4f5c</span></h4>\n"
 "<ol style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\">\n"
-"<li style=\" margin-top:8px; margin-bottom:8px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u64ad\u653e\u4e50\u66f2\u524d\uff0c\u9700\u8981\u6267\u884c\u6307\u4ee4\u521b\u5efa\u9884\u8bbe\u94a2\u7434\u952e\u76d8\uff0c\u76ee\u524d\u63d0\u4f9b 3 \u5957\u952e\u76d8\u65b9\u6848\uff1a\n"
+"<li style=\" margin-top:8px; margin-bottom:8px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u64ad\u653e\u4e50\u66f2\u524d\uff0c\u9700\u8981\u6267\u884c\u6307\u4ee4\u521b\u5efa\u9884\u8bbe\u94a2\u7434\u952e\u76d8\uff0c\u76ee\u524d\u63d0\u4f9b 4 \u5957\u952e\u76d8\u65b9\u6848\uff1a\n"
 "<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 2;\">\n"
 "<li style=\" margin-top:4px; margin-bottom:4px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u5927\u578b\u65b9\u5757\u952e\u76d8\uff1a<span style=\" font-family:'Courier New';\">/function core"
                         ":keyboard/create</span></li>\n"
-"<li style=\" margin-top:4px; margin-bottom:4px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u5c0f\u578b\u952e\u76d8\uff1a<span style=\" font-family:'Courier New';\">/function core:keyboard_mini/create</span></li>\n"
-"<li style=\" margin-top:4px; margin-bottom:4px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u5c0f\u578b\u6da1\u65cb\u952e\u76d8\uff1a<span style=\" font-family:'Courier New';\">/function core:keyboard_mini/create_vortex</span></li></ul></li>\n"
-"<li style=\" margin-top:8px; margin-bottom:8px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u90e8\u7f72\u5b8c\u6210\u540e\uff0c\u6267\u884c\u64ad\u653e\u6307\u4ee4\u542f\u52a8\u52a8\u753b\uff1a<span style=\" font-family:'Courier New';\">/function &lt;\u81ea\u5b9a\u4e49\u6570\u636e\u5305\u540d\u79f0&gt;:start</span>\u3002\u5982\u679c\u9884\u8bbe\u7684\u64ad\u653etick\u9891\u7387\u4e0d\u662f20\uff0c\u4f60\u8fd8\u9700\u8981\u4f7f\u7528"
-                        " <span style=\" font-family:'Courier New';\">/tick rate &lt;\u64ad\u653etick\u9891\u7387&gt;</span> \u6765\u4fee\u6539\u3002</li>\n"
-"<li style=\" margin-top:8px; margin-bottom:8px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u7ec8\u6b62\u64ad\u653e\u5e76\u590d\u4f4d\u573a\u666f\uff1a<span style=\" font-family:'Courier New';\">/function &lt;\u81ea\u5b9a\u4e49\u6570\u636e\u5305\u540d\u79f0&gt;:reset</span></li></ol></body></html>", None))
+"<li style=\" margin-top:4px; margin-bottom:4px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u5c0f\u578b\u952e\u76d8\uff1a<span style=\" font-family:'Courier New';\">/function core:keyboard_v2/create</span></li>\n"
+"<li style=\" margin-top:4px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u6da1\u65cb\u952e\u76d8\uff1a<span style=\" font-family:'Courier New';\">/function core:keyboard_v2/create_vortex</span></li></ul></li>\n"
+"<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 2;\">\n"
+"<li style=\" margin-top:4px; margin-bottom:4px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u5927\u578b\u952e\u76d8\uff1a<span style=\" font-family:'Courier New';\">/function core:keyboard_v2/create_large</span></li></ul>\n"
+"<li style=\" margin-top:8px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-inden"
+                        "t:0px;\">\u90e8\u7f72\u5b8c\u6210\u540e\uff0c\u6267\u884c\u64ad\u653e\u6307\u4ee4\u542f\u52a8\u52a8\u753b\uff1a<span style=\" font-family:'Courier New';\">/function &lt;\u81ea\u5b9a\u4e49\u6570\u636e\u5305\u540d\u79f0&gt;:start</span>\u3002\u5982\u679c\u9884\u8bbe\u7684\u64ad\u653etick\u9891\u7387\u4e0d\u662f20\uff0c\u4f60\u8fd8\u9700\u8981\u4f7f\u7528 <span style=\" font-family:'Courier New';\">/tick rate &lt;\u64ad\u653etick\u9891\u7387&gt;</span> \u6765\u4fee\u6539\u3002</li>\n"
+"<li style=\" margin-top:8px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u7ec8\u6b62\u64ad\u653e\uff1a<span style=\" font-family:'Courier New';\">/function &lt;\u81ea\u5b9a\u4e49\u6570\u636e\u5305\u540d\u79f0&gt;:reset</span></li></ol></body></html>", None))
         self.label_2.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u9884\u8bbe\u914d\u7f6e\uff1a</p></body></html>", None))
         self.label_10.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u6700\u5927\u97f3\u6548\u97f3\u91cf\uff1a</p></body></html>", None))
         self.label_11.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u6700\u5c0f\u97f3\u6548\u97f3\u91cf\uff1a</p></body></html>", None))
@@ -746,13 +928,16 @@ class Ui_Form(object):
         self.label_12.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u64ad\u653e\u8d77\u59cb\u65f6\u523b(ms)\uff1a</p></body></html>", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab), QCoreApplication.translate("Form", u"\u901a\u7528\u8bbe\u7f6e", None))
         self.checkBox.setText(QCoreApplication.translate("Form", u"\u542f\u7528\u7434\u952e\u663e\u793a\u5668", None))
-        self.label_6.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u6700\u5927\u8df3\u8dc3\u65f6\u957f\uff1a</p></body></html>", None))
-        self.label_5.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u6700\u5927\u8df3\u8dc3\u9ad8\u5ea6\uff1a</p></body></html>", None))
+        self.label_6.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u6700\u5927\u8df3\u8dc3\u65f6\u957f (ticks)\uff1a</p></body></html>", None))
+        self.label_5.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u6700\u5927\u8df3\u8dc3\u9ad8\u5ea6 (\u65b9\u5757)\uff1a</p></body></html>", None))
         self.label_7.setText(QCoreApplication.translate("Form", u"<html><head/><body><p>\u6307\u793a\u5668\u65b9\u5757ID\uff1a</p></body></html>", None))
+        self.label_33.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u6307\u793a\u5668\u65b9\u5757\u5927\u5c0f\uff1a</p></body></html>", None))
         self.label_3.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u5de6\u624b\u663e\u793a\u5668\u6570\u91cf\uff1a</p></body></html>", None))
         self.label_4.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u53f3\u624b\u663e\u793a\u5668\u6570\u91cf\uff1a</p></body></html>", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_2), QCoreApplication.translate("Form", u"\u7434\u952e\u6307\u793a\u5668\u8bbe\u7f6e", None))
         self.checkBox_2.setText(QCoreApplication.translate("Form", u"\u542f\u7528\u65b9\u5757\u629b\u5c04\u7ed8\u753b", None))
+        self.checkBox_4.setText(QCoreApplication.translate("Form", u"\u4f7f\u7528\u5c55\u793a\u5b9e\u4f53 (\u5371\u9669)", None))
+        self.label_32.setText(QCoreApplication.translate("Form", u"<html><head/><body><p>\u5176\u539f\u7406\u662f\u7528tp\u6307\u4ee4\u6765\u63a7\u5236\u6bcf\u4e00\u4e2a\u629b\u5c04\u65b9\u5757\u7684\u8fd0\u52a8\uff0c\u542f\u7528\u8fd9\u4e00\u9009\u9879\u5c06\u751f\u6210\u6570\u767e\u500d\u7684\u6307\u4ee4\uff0c<span style=\" font-weight:700;\">\u6781\u6709\u53ef\u80fd\u5bfc\u81f4\u6e38\u620f\u5361\u6b7b</span>\uff0c\u597d\u5904\u662f\u63d0\u9ad8tick\u9891\u7387\u65f6\u4e0d\u4f1a\u53d1\u751f\u8fd0\u52a8\u5361\u987f\uff0c\u89c6\u89c9\u6548\u679c\u66f4\u597d\u3002\u5982\u8981\u4f7f\u7528\u8be5\u529f\u80fd\uff0c\u8bf7\u5c3d\u91cf\u901a\u8fc7\u91cd\u8fdb\u5b58\u6863\u6765\u52a0\u8f7d\u6570\u636e\u5305\uff0c\u4e0d\u8981\u4f7f\u7528reload\u3002</p></body></html>", None))
         self.label_16.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">Schem\u6587\u4ef6\uff1a</p></body></html>", None))
         self.pushButton_3.setText(QCoreApplication.translate("Form", u"\u5237\u65b0", None))
         self.label_15.setText(QCoreApplication.translate("Form", u"<html><head/><body><p>\uff08.schem\u6587\u4ef6\u9700\u653e\u5165\u7a0b\u5e8f\u76ee\u5f55\u7684resources\u6587\u4ef6\u5939\u4e2d\uff09</p></body></html>", None))
@@ -764,7 +949,13 @@ class Ui_Form(object):
         self.label_19.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u65b9\u5757\u629b\u5c04\u6ce2\u6570\uff1a</p></body></html>", None))
         self.label_20.setText(QCoreApplication.translate("Form", u"<html><head/><body><p>\uff08\u6240\u6709\u65b9\u5757\u5c06\u5206\u6210\u76ee\u6807\u6ce2\u6570\u629b\u5c04\u51fa\u53bb\uff0c\u6ce2\u6570\u8bbe\u7f6e\u8fc7\u5c0f\u4f1a\u4e00\u6b21\u629b\u5c04\u8fc7\u591a\u65b9\u5757\uff0c\u6ce2\u6570\u8d85\u8fc7\u97f3\u7b26\u603b\u6570\u65f6\u7ed8\u753b\u4f1a\u4e0d\u5b8c\u6574\uff09</p></body></html>", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_3), QCoreApplication.translate("Form", u"\u65b9\u5757\u629b\u5c04\u7ed8\u753b\u8bbe\u7f6e", None))
-        self.label.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:700;\">\u529f\u80fd\u5f00\u53d1\u4e2d...</span></p></body></html>", None))
+        self.checkBox_3.setText(QCoreApplication.translate("Form", u"\u542f\u7528\u7011\u5e03\u6d41", None))
+        self.label.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u7011\u5e03\u6d41\u6a21\u5f0f\uff1a</p></body></html>", None))
+        self.label_27.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u7011\u5e03\u6d41\u4e0b\u843d\u65f6\u957f (ticks)\uff1a</p></body></html>", None))
+        self.label_28.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u7011\u5e03\u6d41\u5c3a\u5bf8 (\u65b9\u5757)\uff1a</p></body></html>", None))
+        self.label_29.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u65b9\u5757ID\uff1a</p></body></html>", None))
+        self.label_30.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u65b9\u5757\u5927\u5c0f\uff1a</p></body></html>", None))
+        self.label_31.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u65b9\u5757\u5927\u5c0f\u8fc7\u6e21\u65f6\u957f (ticks)\uff1a</p></body></html>", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_4), QCoreApplication.translate("Form", u"\u7011\u5e03\u6d41\u8bbe\u7f6e", None))
         self.label_22.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" font-weight:700;\">\u8fdb\u5ea6\uff1a</span></p></body></html>", None))
         self.label_21.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u81ea\u5b9a\u4e49\u6570\u636e\u5305\u540d\u79f0\uff1a</p></body></html>", None))
@@ -772,7 +963,7 @@ class Ui_Form(object):
         self.pushButton.setText(QCoreApplication.translate("Form", u"\u5bfc\u51fa", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_5), QCoreApplication.translate("Form", u"\u5bfc\u51fa", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_piano), QCoreApplication.translate("Form", u"Minecraft\u94a2\u7434", None))
-        self.label_26.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" font-size:18pt; font-weight:700;\">Minecraft \u539f\u751f\u52a8\u753b\u751f\u6210\u5668</span></p><p><span style=\" font-size:14pt;\">Minecraft Vanilla Animation Generator</span></p><p><span style=\" font-size:12pt;\">\u7a0b\u5e8f\u7248\u672c\uff1av1.0.1</span></p><p><span style=\" font-size:12pt;\">\u7a0b\u5e8f\u521b\u5efa\u8005\uff1a</span><span style=\" font-size:12pt; font-weight:700;\">klue007</span></p><p><span style=\" font-size:12pt;\">\u8be5\u7a0b\u5e8f\u7528\u4e8e\u751f\u6210Minecraft\u539f\u7248\u6570\u636e\u5305\uff0c\u4ee5\u5728\u6e38\u620f\u5185</span></p><p><span style=\" font-size:12pt;\">\u5b9e\u73b0\u4f8b\u5982\u94a2\u7434\u6f14\u594f\u7b49\u57fa\u4e8e\u539f\u7248\u6307\u4ee4\u7684\u52a8\u753b\u6548\u679c\u3002</span></p><p><br/></p></body></html>", None))
+        self.label_26.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" font-size:18pt; font-weight:700;\">Minecraft \u539f\u751f\u52a8\u753b\u751f\u6210\u5668</span></p><p><span style=\" font-size:14pt;\">Minecraft Vanilla Animation Generator</span></p><p><span style=\" font-size:12pt;\">\u7a0b\u5e8f\u7248\u672c\uff1av1.0.2</span></p><p><span style=\" font-size:12pt;\">\u7a0b\u5e8f\u521b\u5efa\u8005\uff1a</span><span style=\" font-size:12pt; font-weight:700;\">klue007</span></p><p><span style=\" font-size:12pt;\">\u8be5\u7a0b\u5e8f\u7528\u4e8e\u751f\u6210Minecraft\u539f\u7248\u6570\u636e\u5305\uff0c\u4ee5\u5728\u6e38\u620f\u5185</span></p><p><span style=\" font-size:12pt;\">\u5b9e\u73b0\u4f8b\u5982\u94a2\u7434\u6f14\u594f\u7b49\u57fa\u4e8e\u539f\u7248\u6307\u4ee4\u7684\u52a8\u753b\u6548\u679c\u3002</span></p><p><br/></p></body></html>", None))
         self.textBrowser_2.setHtml(QCoreApplication.translate("Form", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -783,14 +974,23 @@ class Ui_Form(object):
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:700;\">\u66f4\u65b0\u65e5\u5fd7</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span"
-                        " style=\" font-size:11pt; font-weight:700;\">v1.0.1</span><span style=\" font-size:11pt;\"> (2026.9.10)</span></p>\n"
+                        " style=\" font-size:11pt; font-weight:700;\">v1.0.2</span><span style=\" font-size:11pt;\"> (2026.9.10)</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">- \u94a2\u7434\u52a8\u753b\u751f\u6210\u6a21\u5757\u65b0\u589e\u4e86\u7011\u5e03\u6d41\u529f\u80fd</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">- \u65b9\u5757\u629b\u5c04\u52a8\u753b\u65b0\u589e\u5c55\u793a\u5b9e\u4f53\u6a21\u5f0f</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">- \u65b0\u589e\u4e86\u5927\u578b\u94a2\u7434\u952e\u76d8\u7684\u9884\u8bbe</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">- \u90e8\u5206\u6307\u4ee4\u7684\u5b9e\u4f53\u9009\u62e9\u5668\u66ff\u6362\u4e3a\u6027\u80fd\u66f4\u597d\u7684UUID\u9009\u62e9</p>\n"
+"<p"
+                        " style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-weight:700;\"><br /></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:700;\">v1.0.1</span><span style=\" font-size:11pt;\"> (2026.9.10)</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">- \u73b0\u5728\u5728\u672a\u542f\u7528\u94a2\u7434\u52a8\u753b\u751f\u6210\u6a21\u5757\u7684\u65b9\u5757\u629b\u5c04\u7ed8\u753b\u529f\u80fd\u65f6\uff0c\u5141\u8bb8\u4e0d\u9009\u62e9.schem\u6587\u4ef6</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">- \u73b0\u5728\u5728\u8f93\u5165\u4e86\u542b\u6709\u7a7a\u683c\u6216\u4e2d\u6587\u7684\u6570\u636e\u5305\u540d\u79f0\u540e\u5bfc\u51fa\u4f1a\u63d0\u793a\u9519\u8bef\u5e76\u7ec8\u6b62\u5bfc\u51fa</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">- \u73b0\u5728\u5982\u679c\u5bfc\u51fa\u6570\u636e\u5305\u7684\u4f4d\u7f6e\u5df2\u7ecf\u6709\u4e86\u540c\u540d\u79f0\u7684\u6570\u636e"
-                        "\u5305\uff0c\u4f1a\u5c06\u5df2\u6709\u7684\u6570\u636e\u5305\u6539\u540d\u4ee5\u9632\u6b62\u6587\u4ef6\u8bfb\u5199\u9519\u8bef</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-inden"
+                        "t:0; text-indent:0px;\">- \u73b0\u5728\u5728\u8f93\u5165\u4e86\u542b\u6709\u7a7a\u683c\u6216\u4e2d\u6587\u7684\u6570\u636e\u5305\u540d\u79f0\u540e\u5bfc\u51fa\u4f1a\u63d0\u793a\u9519\u8bef\u5e76\u7ec8\u6b62\u5bfc\u51fa</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">- \u73b0\u5728\u5982\u679c\u5bfc\u51fa\u6570\u636e\u5305\u7684\u4f4d\u7f6e\u5df2\u7ecf\u6709\u4e86\u540c\u540d\u79f0\u7684\u6570\u636e\u5305\uff0c\u4f1a\u5c06\u5df2\u6709\u7684\u6570\u636e\u5305\u6539\u540d\u4ee5\u9632\u6b62\u6587\u4ef6\u8bfb\u5199\u9519\u8bef</p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:700;\"><br /></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:700;\">v1.0.0</span><span style=\" font-size:11pt;\"> (2026.9.10)</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margi"
+                        "n-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:700;\">v1.0.0</span><span style=\" font-size:11pt;\"> (2026.9.10)</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">- \u6dfb\u52a0\u94a2\u7434\u52a8\u753b\u751f\u6210\u6a21\u5757</p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_6), QCoreApplication.translate("Form", u"\u7248\u672c", None))
     # retranslateUi
