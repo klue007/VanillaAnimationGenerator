@@ -59,6 +59,7 @@ def write_datapack(datapack: DatapackManager, scoreboard_name: str, config:Piano
     reset_lines = [
         f"scoreboard players set @e[type=marker,tag={config.marker_tag},limit=1,sort=nearest] {scoreboard_name} 0",
         f"execute at @e[type=marker,tag={config.marker_tag},limit=1,sort=nearest] positioned ~2 ~-2 ~-2 run kill @e[tag=piano_displayer,{config.displayer_kill_area}]",
+        f"execute at @e[type=marker,tag={config.marker_tag},limit=1,sort=nearest] positioned ~2 ~-2 ~-2 run kill @e[tag=piano_waterfall]",
     ]
     for n in range(21, 109):
         reset_lines.append(
@@ -130,10 +131,16 @@ def piano_main(cfg:PianoConfig, logger: Logger):
 
     piano_timeline = get_timeline(note_list, block_list, cfg, logger)
 
+    waterfall_tick_shift = 0
     if cfg.waterfall:
         try:
+            waterfall_tick_shift = note_list[0].mc_tick - cfg.waterfall_tick
             waterfall_timeline = get_waterfall_timeline(note_list, cfg)
             piano_timeline.merge_absolute(waterfall_timeline)
+            logger.log_success(f"已生成瀑布流命令!")
+            if waterfall_tick_shift <= 0:
+                piano_timeline.shift_time(1 - waterfall_tick_shift)
+                logger.log_warn(f"瀑布流命令最小执行时刻 ({waterfall_tick_shift}) 小于0, 部分瀑布流命令无法被执行, 已自动调整音乐播放起始时刻使所有瀑布流命令都可以被执行.")
         except Exception as e:
             logger.log_error(f"生成瀑布流命令时出现错误: {str(e)}")
     else:

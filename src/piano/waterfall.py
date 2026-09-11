@@ -8,7 +8,7 @@ def get_note_waterfall_timeline(t0: int, t1: int, t_trans: int, x0: float, y0: f
 
     dt = t1 - t0
 
-    output.add_command(t0, f"summon item_display ~{x0:.5f} ~{y0:.5f} ~{z0:.5f} {{item:{{id:\"{block}\"}},transformation:{{left_rotation:[0.0f,0.0f,0.0f,1.0f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[0.0f,0.0f,0.0f],translation:[0.0f,0.0f,0.0f]}},Tags:[\"piano_waterfall\",\"piano_waterfall_{id}\"],Glowing:1b,brightness:{{sky:15,block:15}}}}")
+    output.add_command(t0, f"summon item_display ~{x0:.5f} ~{y0:.5f} ~{z0:.5f} {{item:{{id:\"{block}\"}},transformation:{{left_rotation:[0.0f,0.0f,0.0f,1.0f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[0.0f,0.0f,0.0f],translation:[0.0f,0.0f,0.0f]}},Tags:[\"piano_waterfall\",\"piano_waterfall_{id}\"],brightness:{{sky:15,block:15}}}}")
 
     x_old = x0
     y_old = y0
@@ -22,7 +22,7 @@ def get_note_waterfall_timeline(t0: int, t1: int, t_trans: int, x0: float, y0: f
         y_new = y0 + (y1 - y0) * i / dt
         z_new = z0 + (z1 - z0) * i / dt
 
-        output.add_command(t0 + i, f"execute positioned ~{x_old:.5f} ~{y_old:.5f} ~{z_old:.5f} run tp @e[type=item_display,tag=piano_waterfall_{id},limit=1,sort=nearest,distance=..2] ~{x_new:.5f} ~{y_new:.5f} ~{z_new:.5f}")
+        output.add_command(t0 + i, f"execute positioned ~{x_old:.5f} ~{y_old:.5f} ~{z_old:.5f} run tp @e[type=item_display,tag=piano_waterfall_{id},limit=1,sort=nearest,distance=..10] {x_new:.5f} {y_new:.5f} {z_new:.5f}")
 
         x_old = x_new
         y_old = y_new
@@ -31,9 +31,9 @@ def get_note_waterfall_timeline(t0: int, t1: int, t_trans: int, x0: float, y0: f
         if i <= t_trans:
             scale_new = block_size * i / t_trans
 
-            output.add_command(t0 + i, f"execute positioned ~{x_new:.5f} ~{y_new:.5f} ~{z_new:.5f} run data merge entity @e[type=item_display,tag=piano_waterfall_{id},limit=1,sort=nearest,distance=..2] {{transfomation:{{scale:[{scale_new:.5f},{scale_new:.5f},{scale_new:.5f}]}}}}")
+            output.add_command(t0 + i, f"execute positioned ~{x_new:.5f} ~{y_new:.5f} ~{z_new:.5f} run data merge entity @e[type=item_display,tag=piano_waterfall_{id},limit=1,sort=nearest,distance=..10] {{transformation:{{scale:[{scale_new:.5f}f,{scale_new:.5f}f,{scale_new:.5f}f]}}}}")
 
-    output.add_command(t1, f"kill @e[type=item_display,tag=piano_waterfall_{id},limit=1,sort=nearest,distance=..2] ~{x_new:.5f} ~{y_new:.5f} ~{z_new:.5f}")
+    output.add_command(t1, f"execute positioned ~{x_new:.5f} ~{y_new:.5f} ~{z_new:.5f} run kill @e[type=item_display,tag=piano_waterfall_{id},limit=1,sort=nearest,distance=..2]")
 
     return output
 
