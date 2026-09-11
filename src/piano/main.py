@@ -129,6 +129,16 @@ def piano_main(cfg:PianoConfig, logger: Logger):
     logger.log_warn("   平均误差: {:.6f}ms".format(avg_error))
 
     piano_timeline = get_timeline(note_list, block_list, cfg, logger)
+
+    if cfg.waterfall:
+        try:
+            waterfall_timeline = get_waterfall_timeline(note_list, cfg)
+            piano_timeline.merge_absolute(waterfall_timeline)
+        except Exception as e:
+            logger.log_error(f"生成瀑布流命令时出现错误: {str(e)}")
+    else:
+        logger.log_warn(f"未启用瀑布流, 将跳过瀑布流命令生成.")
+
     datapack = DatapackManager(cfg.datapack_name, cfg.datapack_version, logger)
     if datapack.is_backuped == False:
         return

@@ -74,6 +74,7 @@ class VAGWindow(QWidget):
 
         self.ui.comboBox.clear()
         self.ui.comboBox.addItems(["大型方块键盘", "小型键盘", "涡旋键盘", "大型键盘"])
+        self.ui.comboBox_4.addItems(["竖直", "水平"])
         self.piano_load_preset(0)
         self.piano_update_block_files(True)
         self.piano_update_midi_files(True)
@@ -148,6 +149,14 @@ class VAGWindow(QWidget):
         self.ui.spinBox_9.setValue(cfg.painting_base_pos[1])
         self.ui.spinBox_10.setValue(cfg.painting_base_pos[2])
         self.ui.spinBox_7.setValue(cfg.block_splits)
+        self.ui.checkBox_3.setChecked(cfg.waterfall)
+        self.ui.comboBox_3.setCurrentIndex(cfg.waterfall_mode)
+        self.ui.spinBox_11.setValue(cfg.waterfall_tick)
+        self.ui.doubleSpinBox_6.setValue(cfg.waterfall_height)
+        self.ui.lineEdit_3.setText(cfg.waterfall_block)
+        self.ui.doubleSpinBox_7.setValue(cfg.waterfall_block_size)
+        self.ui.spinBox_12.setValue(cfg.waterfall_block_transition_tick)
+
 
     def on_export_finish(self):
         self.is_exporting = False
@@ -210,6 +219,14 @@ class VAGWindow(QWidget):
         else:
             self.piano_logger.log("\n")
             self.piano_logger.log_info("数据包名称: " + cfg.datapack_name)
+
+        cfg.waterfall = self.ui.checkBox_3.isChecked()
+        cfg.waterfall_mode = self.ui.comboBox_3.currentIndex()
+        cfg.waterfall_tick = self.ui.spinBox_11.value()
+        cfg.waterfall_height = self.ui.doubleSpinBox_6.value()
+        cfg.waterfall_block = self.ui.lineEdit_3.text()
+        cfg.waterfall_block_size = self.ui.doubleSpinBox_7.value()
+        cfg.waterfall_block_transition_tick = self.ui.spinBox_12.value()
 
         self.is_exporting = True
         self.ui.pushButton.setEnabled(False)
