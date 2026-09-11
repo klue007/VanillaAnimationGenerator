@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainCcWnHG.ui'
+## Form generated from reading UI file 'mainjuTbPA.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.11.2
 ##
@@ -569,9 +569,133 @@ class Ui_Form(object):
         self.tabWidget_2.addTab(self.tab_3, "")
         self.tab_4 = QWidget()
         self.tab_4.setObjectName(u"tab_4")
+        self.horizontalLayout_20 = QHBoxLayout(self.tab_4)
+        self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
+        self.verticalLayout_14 = QVBoxLayout()
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.checkBox_3 = QCheckBox(self.tab_4)
+        self.checkBox_3.setObjectName(u"checkBox_3")
+
+        self.verticalLayout_14.addWidget(self.checkBox_3)
+
+
+        self.horizontalLayout_20.addLayout(self.verticalLayout_14)
+
+        self.verticalLayout_17 = QVBoxLayout()
+        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
+        self.horizontalLayout_21 = QHBoxLayout()
+        self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
         self.label = QLabel(self.tab_4)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(20, 10, 151, 51))
+        sizePolicy1.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
+        self.label.setSizePolicy(sizePolicy1)
+
+        self.horizontalLayout_21.addWidget(self.label)
+
+        self.comboBox_4 = QComboBox(self.tab_4)
+        self.comboBox_4.setObjectName(u"comboBox_4")
+
+        self.horizontalLayout_21.addWidget(self.comboBox_4)
+
+
+        self.verticalLayout_17.addLayout(self.horizontalLayout_21)
+
+        self.horizontalLayout_24 = QHBoxLayout()
+        self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
+        self.label_27 = QLabel(self.tab_4)
+        self.label_27.setObjectName(u"label_27")
+        sizePolicy1.setHeightForWidth(self.label_27.sizePolicy().hasHeightForWidth())
+        self.label_27.setSizePolicy(sizePolicy1)
+
+        self.horizontalLayout_24.addWidget(self.label_27)
+
+        self.spinBox_11 = QSpinBox(self.tab_4)
+        self.spinBox_11.setObjectName(u"spinBox_11")
+        self.spinBox_11.setMaximum(1000)
+
+        self.horizontalLayout_24.addWidget(self.spinBox_11)
+
+
+        self.verticalLayout_17.addLayout(self.horizontalLayout_24)
+
+        self.horizontalLayout_27 = QHBoxLayout()
+        self.horizontalLayout_27.setObjectName(u"horizontalLayout_27")
+        self.label_28 = QLabel(self.tab_4)
+        self.label_28.setObjectName(u"label_28")
+        sizePolicy1.setHeightForWidth(self.label_28.sizePolicy().hasHeightForWidth())
+        self.label_28.setSizePolicy(sizePolicy1)
+
+        self.horizontalLayout_27.addWidget(self.label_28)
+
+        self.doubleSpinBox_6 = QDoubleSpinBox(self.tab_4)
+        self.doubleSpinBox_6.setObjectName(u"doubleSpinBox_6")
+
+        self.horizontalLayout_27.addWidget(self.doubleSpinBox_6)
+
+
+        self.verticalLayout_17.addLayout(self.horizontalLayout_27)
+
+
+        self.horizontalLayout_20.addLayout(self.verticalLayout_17)
+
+        self.verticalLayout_15 = QVBoxLayout()
+        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.horizontalLayout_28 = QHBoxLayout()
+        self.horizontalLayout_28.setObjectName(u"horizontalLayout_28")
+        self.label_29 = QLabel(self.tab_4)
+        self.label_29.setObjectName(u"label_29")
+        sizePolicy1.setHeightForWidth(self.label_29.sizePolicy().hasHeightForWidth())
+        self.label_29.setSizePolicy(sizePolicy1)
+
+        self.horizontalLayout_28.addWidget(self.label_29)
+
+        self.lineEdit_3 = QLineEdit(self.tab_4)
+        self.lineEdit_3.setObjectName(u"lineEdit_3")
+        sizePolicy3.setHeightForWidth(self.lineEdit_3.sizePolicy().hasHeightForWidth())
+        self.lineEdit_3.setSizePolicy(sizePolicy3)
+
+        self.horizontalLayout_28.addWidget(self.lineEdit_3)
+
+
+        self.verticalLayout_15.addLayout(self.horizontalLayout_28)
+
+        self.horizontalLayout_29 = QHBoxLayout()
+        self.horizontalLayout_29.setObjectName(u"horizontalLayout_29")
+        self.label_30 = QLabel(self.tab_4)
+        self.label_30.setObjectName(u"label_30")
+        sizePolicy1.setHeightForWidth(self.label_30.sizePolicy().hasHeightForWidth())
+        self.label_30.setSizePolicy(sizePolicy1)
+
+        self.horizontalLayout_29.addWidget(self.label_30)
+
+        self.doubleSpinBox_7 = QDoubleSpinBox(self.tab_4)
+        self.doubleSpinBox_7.setObjectName(u"doubleSpinBox_7")
+
+        self.horizontalLayout_29.addWidget(self.doubleSpinBox_7)
+
+
+        self.verticalLayout_15.addLayout(self.horizontalLayout_29)
+
+        self.horizontalLayout_30 = QHBoxLayout()
+        self.horizontalLayout_30.setObjectName(u"horizontalLayout_30")
+        self.label_31 = QLabel(self.tab_4)
+        self.label_31.setObjectName(u"label_31")
+        sizePolicy1.setHeightForWidth(self.label_31.sizePolicy().hasHeightForWidth())
+        self.label_31.setSizePolicy(sizePolicy1)
+
+        self.horizontalLayout_30.addWidget(self.label_31)
+
+        self.spinBox_12 = QSpinBox(self.tab_4)
+        self.spinBox_12.setObjectName(u"spinBox_12")
+
+        self.horizontalLayout_30.addWidget(self.spinBox_12)
+
+
+        self.verticalLayout_15.addLayout(self.horizontalLayout_30)
+
+
+        self.horizontalLayout_20.addLayout(self.verticalLayout_15)
+
         self.tabWidget_2.addTab(self.tab_4, "")
         self.tab_5 = QWidget()
         self.tab_5.setObjectName(u"tab_5")
@@ -644,7 +768,6 @@ class Ui_Form(object):
 
         self.verticalLayout_2.setStretch(0, 1)
         self.verticalLayout_2.setStretch(1, 1)
-        self.verticalLayout_2.setStretch(2, 1)
         self.tabWidget.addTab(self.tab_piano, "")
         self.tab_6 = QWidget()
         self.tab_6.setObjectName(u"tab_6")
@@ -748,8 +871,8 @@ class Ui_Form(object):
         self.label_12.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u64ad\u653e\u8d77\u59cb\u65f6\u523b(ms)\uff1a</p></body></html>", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab), QCoreApplication.translate("Form", u"\u901a\u7528\u8bbe\u7f6e", None))
         self.checkBox.setText(QCoreApplication.translate("Form", u"\u542f\u7528\u7434\u952e\u663e\u793a\u5668", None))
-        self.label_6.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u6700\u5927\u8df3\u8dc3\u65f6\u957f\uff1a</p></body></html>", None))
-        self.label_5.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u6700\u5927\u8df3\u8dc3\u9ad8\u5ea6\uff1a</p></body></html>", None))
+        self.label_6.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u6700\u5927\u8df3\u8dc3\u65f6\u957f (ticks)\uff1a</p></body></html>", None))
+        self.label_5.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u6700\u5927\u8df3\u8dc3\u9ad8\u5ea6 (\u65b9\u5757)\uff1a</p></body></html>", None))
         self.label_7.setText(QCoreApplication.translate("Form", u"<html><head/><body><p>\u6307\u793a\u5668\u65b9\u5757ID\uff1a</p></body></html>", None))
         self.label_3.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u5de6\u624b\u663e\u793a\u5668\u6570\u91cf\uff1a</p></body></html>", None))
         self.label_4.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u53f3\u624b\u663e\u793a\u5668\u6570\u91cf\uff1a</p></body></html>", None))
@@ -766,7 +889,13 @@ class Ui_Form(object):
         self.label_19.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u65b9\u5757\u629b\u5c04\u6ce2\u6570\uff1a</p></body></html>", None))
         self.label_20.setText(QCoreApplication.translate("Form", u"<html><head/><body><p>\uff08\u6240\u6709\u65b9\u5757\u5c06\u5206\u6210\u76ee\u6807\u6ce2\u6570\u629b\u5c04\u51fa\u53bb\uff0c\u6ce2\u6570\u8bbe\u7f6e\u8fc7\u5c0f\u4f1a\u4e00\u6b21\u629b\u5c04\u8fc7\u591a\u65b9\u5757\uff0c\u6ce2\u6570\u8d85\u8fc7\u97f3\u7b26\u603b\u6570\u65f6\u7ed8\u753b\u4f1a\u4e0d\u5b8c\u6574\uff09</p></body></html>", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_3), QCoreApplication.translate("Form", u"\u65b9\u5757\u629b\u5c04\u7ed8\u753b\u8bbe\u7f6e", None))
-        self.label.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" font-size:12pt; font-weight:700;\">\u529f\u80fd\u5f00\u53d1\u4e2d...</span></p></body></html>", None))
+        self.checkBox_3.setText(QCoreApplication.translate("Form", u"\u542f\u7528\u7011\u5e03\u6d41", None))
+        self.label.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u7011\u5e03\u6d41\u6a21\u5f0f\uff1a</p></body></html>", None))
+        self.label_27.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u7011\u5e03\u6d41\u4e0b\u843d\u65f6\u957f (ticks)\uff1a</p></body></html>", None))
+        self.label_28.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u7011\u5e03\u6d41\u5c3a\u5bf8 (\u65b9\u5757)\uff1a</p></body></html>", None))
+        self.label_29.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u65b9\u5757ID\uff1a</p></body></html>", None))
+        self.label_30.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u65b9\u5757\u5927\u5c0f\uff1a</p></body></html>", None))
+        self.label_31.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u65b9\u5757\u5927\u5c0f\u8fc7\u6e21\u65f6\u957f (ticks)\uff1a</p></body></html>", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_4), QCoreApplication.translate("Form", u"\u7011\u5e03\u6d41\u8bbe\u7f6e", None))
         self.label_22.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" font-weight:700;\">\u8fdb\u5ea6\uff1a</span></p></body></html>", None))
         self.label_21.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u81ea\u5b9a\u4e49\u6570\u636e\u5305\u540d\u79f0\uff1a</p></body></html>", None))
