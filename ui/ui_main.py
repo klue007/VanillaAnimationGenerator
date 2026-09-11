@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainsGGxBx.ui'
+## Form generated from reading UI file 'mainIUWcPe.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.11.2
 ##
@@ -676,6 +676,7 @@ class Ui_Form(object):
 
         self.doubleSpinBox_6 = QDoubleSpinBox(self.tab_4)
         self.doubleSpinBox_6.setObjectName(u"doubleSpinBox_6")
+        self.doubleSpinBox_6.setMaximum(1000.000000000000000)
 
         self.horizontalLayout_27.addWidget(self.doubleSpinBox_6)
 
@@ -741,6 +742,7 @@ class Ui_Form(object):
 
         self.spinBox_12 = QSpinBox(self.tab_4)
         self.spinBox_12.setObjectName(u"spinBox_12")
+        self.spinBox_12.setMaximum(1000)
 
         self.horizontalLayout_30.addWidget(self.spinBox_12)
 
