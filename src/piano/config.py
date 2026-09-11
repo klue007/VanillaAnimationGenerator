@@ -138,12 +138,12 @@ PIANO_CONFIG= {
     "DISPLAYER_VORTEX": 11,
     "VORTEX_POOL": 1,
 
-    "DELAY_MS": 0,
+    "DELAY_MS": 1000,
 }
 
 PIANO_MINI_CONFIG= {
 
-    "MARKER_TAG": "keyboard_mini_console",
+    "MARKER_TAG": "keyboard_v2_console",
 
     "MIDI_PATH" : "",
     "BLOCK_PATH" : "",
@@ -181,7 +181,7 @@ PIANO_MINI_CONFIG= {
     "MOTION_Y_RANDOM" : 1.5,
     "PAINTING_BASE_POS" : [7, -19, -51],
 
-    "NOTE_DUR_EXTRA_MS": 600,
+    "NOTE_DUR_EXTRA_MS": 0,
 
     "NOTE_POS" : {
         22: [0.550, 1.14, 0.125],
@@ -279,12 +279,12 @@ PIANO_MINI_CONFIG= {
     "DISPLAYER_VORTEX": 11,
     "VORTEX_POOL": 1,
 
-    "DELAY_MS": 3000,
+    "DELAY_MS": 1000,
 }
 
 PIANO_VORTEX_CONFIG= {
 
-    "MARKER_TAG": "keyboard_mini_console",
+    "MARKER_TAG": "keyboard_v2_console",
 
     "MIDI_PATH" : "",
     "BLOCK_PATH" : "",
@@ -322,7 +322,7 @@ PIANO_VORTEX_CONFIG= {
     "MOTION_Y_RANDOM" : 1.5,
     "PAINTING_BASE_POS" : [7, -19, -51],
 
-    "NOTE_DUR_EXTRA_MS": 600,
+    "NOTE_DUR_EXTRA_MS": 0,
 
     "NOTE_POS" : {
        21: [5.08421, 0, -11.41932],
@@ -423,12 +423,154 @@ PIANO_VORTEX_CONFIG= {
     "DELAY_MS": 1000,
 }
 
+PIANO_LARGE_CONFIG= {
+
+    "MARKER_TAG": "keyboard_v2_console",
+
+    "MIDI_PATH" : "",
+    "BLOCK_PATH" : "",
+    "DATAPACK_NAME" : "",
+    "DATAPACK_VERSION" : 94,
+
+    "DISPLAYER_KILL_AREA" : "dx=22,dy=25,dz=162",
+    "DISPLAYER_BLOCK" : "ochre_froglight",
+    "DISPLAYER_COUNT_RIGHT" : 5,
+    "DISPLAYER_COUNT_LEFT" : 5,
+    "DISPLAYER_PEAK_HEIGHT" : 8.0,
+    "DISPLAYER_MAX_MOVING_TICK" : 40,
+    "DISPLAYER_SUMMON_CMD" : "summon item_display ~ ~1 ~ {{item:{{id:\"{displayer_block}\"}},transformation:{{left_rotation:[0.0f,0.0f,0.0f,1.0f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[1.0f,1.0f,1.0f],translation:[0.0f,0.0f,0.0f]}},Tags:[\"piano_displayer\",\"piano_displayer_{id}\"],Glowing:1b,brightness:{{sky:15,block:15}}}}",
+
+    "TICK_RATE" : 32,
+    "ALLOW_DURATIONS" : [0.05, 0.10, 0.25, 0.50, 1.00, 2.00, 4.00],
+    "SOUND_NAMESPACE" : "piano",
+    "BASE_VOLUME" : 1.0,
+    "MIN_VOLUME" : 0.20,
+
+    "BLOCK_SPLITS" : 3200,
+
+    "PLAYSOUND_TPL" : (
+        "execute "
+        "positioned ~100 ~-20 ~-20 as @a[dx=-180,dy=100,dz=197] at @s "
+        "run playsound {sound} master @s ~ ~ ~ {vol} 1"
+    ),
+
+    "SCOREBOARD_TPL" : (
+        "scoreboard players set @s "
+        "note_{note_num} {tick_len}"
+    ),
+
+    "MOTION_Y" : 1.0,
+    "MOTION_Y_RANDOM" : 1.5,
+    "PAINTING_BASE_POS" : [7, -19, -51],
+
+    "NOTE_DUR_EXTRA_MS": 0,
+
+    "NOTE_POS" : {
+        21: [9.7, 2.0, 3.0],
+        22: [9.7, 3.596, 4.5],
+        23: [9.7, 2.0, 6.0],
+        24: [9.7, 2.0, 9.0],
+        25: [9.7, 3.596, 10.5],
+        26: [9.7, 2.0, 12.0],
+        27: [9.7, 3.596, 13.5],
+        28: [9.7, 2.0, 15.0],
+        29: [9.7, 2.0, 18.0],
+        30: [9.7, 3.596, 19.5],
+        31: [9.7, 2.0, 21.0],
+        32: [9.7, 3.596, 22.5],
+        33: [9.7, 2.0, 24.0],
+        34: [9.7, 3.596, 25.5],
+        35: [9.7, 2.0, 27.0],
+        36: [9.7, 2.0, 30.0],
+        37: [9.7, 3.596, 31.5],
+        38: [9.7, 2.0, 33.0],
+        39: [9.7, 3.596, 34.5],
+        40: [9.7, 2.0, 36.0],
+        41: [9.7, 2.0, 39.0],
+        42: [9.7, 3.596, 40.5],
+        43: [9.7, 2.0, 42.0],
+        44: [9.7, 3.596, 43.5],
+        45: [9.7, 2.0, 45.0],
+        46: [9.7, 3.596, 46.5],
+        47: [9.7, 2.0, 48.0],
+        48: [9.7, 2.0, 51.0],
+        49: [9.7, 3.596, 52.5],
+        50: [9.7, 2.0, 54.0],
+        51: [9.7, 3.596, 55.5],
+        52: [9.7, 2.0, 57.0],
+        53: [9.7, 2.0, 60.0],
+        54: [9.7, 3.596, 61.5],
+        55: [9.7, 2.0, 63.0],
+        56: [9.7, 3.596, 64.5],
+        57: [9.7, 2.0, 66.0],
+        58: [9.7, 3.596, 67.5],
+        59: [9.7, 2.0, 69.0],
+        60: [9.7, 2.0, 72.0],
+        61: [9.7, 3.596, 73.5],
+        62: [9.7, 2.0, 75.0],
+        63: [9.7, 3.596, 76.5],
+        64: [9.7, 2.0, 78.0],
+        65: [9.7, 2.0, 81.0],
+        66: [9.7, 3.596, 82.5],
+        67: [9.7, 2.0, 84.0],
+        68: [9.7, 3.596, 85.5],
+        69: [9.7, 2.0, 87.0],
+        70: [9.7, 3.596, 88.5],
+        71: [9.7, 2.0, 90.0],
+        72: [9.7, 2.0, 93.0],
+        73: [9.7, 3.596, 94.5],
+        74: [9.7, 2.0, 96.0],
+        75: [9.7, 3.596, 97.5],
+        76: [9.7, 2.0, 99.0],
+        77: [9.7, 2.0, 102.0],
+        78: [9.7, 3.596, 103.5],
+        79: [9.7, 2.0, 105.0],
+        80: [9.7, 3.596, 106.5],
+        81: [9.7, 2.0, 108.0],
+        82: [9.7, 3.596, 109.5],
+        83: [9.7, 2.0, 111.0],
+        84: [9.7, 2.0, 114.0],
+        85: [9.7, 3.596, 115.5],
+        86: [9.7, 2.0, 117.0],
+        87: [9.7, 3.596, 118.5],
+        88: [9.7, 2.0, 120.0],
+        89: [9.7, 2.0, 123.0],
+        90: [9.7, 3.596, 124.5],
+        91: [9.7, 2.0, 126.0],
+        92: [9.7, 3.596, 127.5],
+        93: [9.7, 2.0, 129.0],
+        94: [9.7, 3.596, 130.5],
+        95: [9.7, 2.0, 132.0],
+        96: [9.7, 2.0, 135.0],
+        97: [9.7, 3.596, 136.5],
+        98: [9.7, 2.0, 138.0],
+        99: [9.7, 3.596, 139.5],
+        100: [9.7, 2.0, 141.0],
+        101: [9.7, 2.0, 144.0],
+        102: [9.7, 3.596, 145.5],
+        103: [9.7, 2.0, 147.0],
+        104: [9.7, 3.596, 148.5],
+        105: [9.7, 2.0, 150.0],
+        106: [9.7, 3.596, 151.5],
+        107: [9.7, 2.0, 153.0],
+        108: [9.7, 2.0, 156.0],
+    },
+
+    "BLOCK_PAINTING": 1,
+    "DISPLAYER": 1,
+    "DISPLAYER_VORTEX": 11,
+    "VORTEX_POOL": 1,
+
+    "DELAY_MS": 1000,
+}
+
 class PianoConfigPresets():
 
     def __init__(self):
         self.piano = PIANO_CONFIG
         self.piano_mini = PIANO_MINI_CONFIG
         self.piano_vortex = PIANO_VORTEX_CONFIG
+        self.piano_large = PIANO_LARGE_CONFIG
 
 
 class PianoConfig():
