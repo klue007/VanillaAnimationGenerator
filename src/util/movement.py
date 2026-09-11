@@ -55,7 +55,7 @@ class MovingEntity():
         for tick in range(0, delta_tick+1):
             t = tick / delta_tick
             x = self.x0 + (self.x1 - self.x0) * t
-            y = self.y0 + (self.y1 - self.x0) * t
+            y = self.y0 + (self.y1 - self.y0) * t
             z = self.z0 + (self.z1 - self.z0) * t
             output.add_command(tick + start_tick, f"tp {self.mcuuid.to_uuid_string()} ~{x:.3f} ~{y:.3f} ~{z:.3f}")
         return output

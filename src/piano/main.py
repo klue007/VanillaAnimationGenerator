@@ -29,7 +29,7 @@ def get_timeline(note_list: list[Note], block_list: BlockGroup, config: PianoCon
     current_note_index = 0
     block_tag_number = 0
     note_list_len = len(note_list)
-    logger.log_info("正在生成命令...")
+    logger.log_info("正在生成音效命令...")
 
     for note in note_list:
         current_note_index += 1
@@ -54,7 +54,7 @@ def get_timeline(note_list: list[Note], block_list: BlockGroup, config: PianoCon
 
     if config.displayer:
         output_timeline.merge(get_displayer_timeline(note_list, config, uuid_manager))
-    logger.log_success("所有命令已生成!")
+    logger.log_success("所有音效命令已生成!")
     return output_timeline
 
 def write_datapack(datapack: DatapackManager, scoreboard_name: str, config:PianoConfig):
