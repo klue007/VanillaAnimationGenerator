@@ -73,7 +73,7 @@ class VAGWindow(QWidget):
         self.midi_file_list: list[tuple[str, str]] = []
 
         self.ui.comboBox.clear()
-        self.ui.comboBox.addItems(["大型方块键盘", "小型键盘", "小型涡旋键盘"])
+        self.ui.comboBox.addItems(["大型方块键盘", "小型键盘", "涡旋键盘", "大型键盘"])
         self.piano_load_preset(0)
         self.piano_update_block_files(True)
         self.piano_update_midi_files(True)
