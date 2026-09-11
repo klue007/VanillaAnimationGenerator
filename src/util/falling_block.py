@@ -30,15 +30,9 @@ def find_falling_tick(y1: float, y2: float, vy0: float, max_ticks: int = 800):
 
 def falling_block_calculate(
     x1: float, y1: float, z1: float,
-    block: Block,
-    mot_y: float,
-    tick: int,
-    index: int,
-    eps: float = 1e-5
-) -> Timeline:
-    x2 = float(block.x)
-    y2 = float(block.y)
-    z2 = float(block.z)
+    x2: float, y2: float, z2: float,
+    mot_y: float
+) -> tuple:
 
     T = find_falling_tick(y1, y2, mot_y, max_ticks=800)
     if T is None:
@@ -49,10 +43,22 @@ def falling_block_calculate(
     best_vx = (x2 - x1) / sum_geo
     best_vz = (z2 - z1) / sum_geo
 
+    return best_vx, best_vz, T
+
+
+def get_falling_block_command(
+    x1: float, y1: float, z1: float,
+    block: Block,
+    mot_y: float,
+    tick: int,
+    index: int,
+    eps: float = 1e-5
+) -> Timeline:
+    best_vx, best_vz, time = falling_block_calculate(x1, y1, z1, float(block.x), float(block.y), float(block.z), mot_y)
     cmd = (
         f"summon minecraft:falling_block ~{x1} ~{y1} ~{z1} "
         f"{{BlockState:{{Name:\"{block.id}\",Properties:{block.get_block_state_str()}}},Motion:[{best_vx:.6f}d,{mot_y:.6f}d,{best_vz:.6f}d],CancelDrop:True,Tags:[\"b{index}\"]}}"
     )
     cmd_setblock = f"setblock ~{block.x} ~{block.y} ~{block.z} {block.name}"
     cmd_kill = f"kill @e[type=falling_block,x={block.x},y={block.y},z={block.z},tag=b{index},limit=1,sort=nearest]"
-    return Timeline({tick: [cmd], tick + T - 2: [cmd_setblock, cmd_kill]})
+    return Timeline({tick: [cmd], tick + time - 2: [cmd_setblock, cmd_kill]})

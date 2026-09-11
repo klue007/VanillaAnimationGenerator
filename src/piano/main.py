@@ -3,16 +3,14 @@ from src.util import Timeline
 from .note import Note
 from src.util import Block
 from src.util import BlockGroup
-from src.util import falling_block_calculate
+from src.util import get_falling_block_command
 from src.util import DatapackManager
 import random
-import os
 from .displayer import get_displayer_timeline
 from src.piano.note import midi_parse
 from src.piano.note import MidiFile
 from src.piano.config import PianoConfig
 from src.util import Logger
-import time
 from src.piano.waterfall import get_waterfall_timeline
 from src.util import MCUUIDManager
 
@@ -47,7 +45,7 @@ def get_timeline(note_list: list[Note], block_list: BlockGroup, config: PianoCon
 
             for block in chunk_blocks:
                 block_tag_number += 1
-                output_timeline.merge_absolute(falling_block_calculate(start_x,start_y,start_z, block, motion_val, note.mc_tick, block_tag_number))
+                output_timeline.merge_absolute(get_falling_block_command(start_x,start_y,start_z, block, motion_val, note.mc_tick, block_tag_number))
             current_block_index += 1
 
     if config.displayer:
