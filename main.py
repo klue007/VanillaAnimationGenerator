@@ -157,6 +157,7 @@ class VAGWindow(QWidget):
         self.ui.doubleSpinBox_7.setValue(cfg.waterfall_block_size)
         self.ui.spinBox_12.setValue(cfg.waterfall_block_transition_tick)
         self.ui.checkBox_4.setChecked(cfg.block_painting_use_display_entity)
+        self.ui.doubleSpinBox_8.setValue(cfg.displayer_size)
 
     def on_export_finish(self):
         self.is_exporting = False
@@ -194,6 +195,7 @@ class VAGWindow(QWidget):
         cfg.delay_ms = self.ui.spinBox_6.value()
         cfg.displayer = self.ui.checkBox.isChecked()
         cfg.displayer_block = self.ui.lineEdit.text()
+        cfg.displayer_size = self.ui.doubleSpinBox_8.value()
         cfg.displayer_count_left = self.ui.spinBox.value()
         cfg.displayer_count_right = self.ui.spinBox_2.value()
         cfg.displayer_max_moving_tick = self.ui.spinBox_3.value()

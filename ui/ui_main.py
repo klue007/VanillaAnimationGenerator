@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainVEnLIq.ui'
+## Form generated from reading UI file 'mainsGGxBx.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.11.2
 ##
@@ -325,6 +325,23 @@ class Ui_Form(object):
 
 
         self.verticalLayout_12.addLayout(self.horizontalLayout_6)
+
+        self.horizontalLayout_31 = QHBoxLayout()
+        self.horizontalLayout_31.setObjectName(u"horizontalLayout_31")
+        self.label_33 = QLabel(self.tab_2)
+        self.label_33.setObjectName(u"label_33")
+        sizePolicy1.setHeightForWidth(self.label_33.sizePolicy().hasHeightForWidth())
+        self.label_33.setSizePolicy(sizePolicy1)
+
+        self.horizontalLayout_31.addWidget(self.label_33)
+
+        self.doubleSpinBox_8 = QDoubleSpinBox(self.tab_2)
+        self.doubleSpinBox_8.setObjectName(u"doubleSpinBox_8")
+
+        self.horizontalLayout_31.addWidget(self.doubleSpinBox_8)
+
+
+        self.verticalLayout_12.addLayout(self.horizontalLayout_31)
 
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
@@ -912,12 +929,13 @@ class Ui_Form(object):
         self.label_6.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u6700\u5927\u8df3\u8dc3\u65f6\u957f (ticks)\uff1a</p></body></html>", None))
         self.label_5.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u6700\u5927\u8df3\u8dc3\u9ad8\u5ea6 (\u65b9\u5757)\uff1a</p></body></html>", None))
         self.label_7.setText(QCoreApplication.translate("Form", u"<html><head/><body><p>\u6307\u793a\u5668\u65b9\u5757ID\uff1a</p></body></html>", None))
+        self.label_33.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u6307\u793a\u5668\u65b9\u5757\u5927\u5c0f\uff1a</p></body></html>", None))
         self.label_3.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u5de6\u624b\u663e\u793a\u5668\u6570\u91cf\uff1a</p></body></html>", None))
         self.label_4.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u53f3\u624b\u663e\u793a\u5668\u6570\u91cf\uff1a</p></body></html>", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_2), QCoreApplication.translate("Form", u"\u7434\u952e\u6307\u793a\u5668\u8bbe\u7f6e", None))
         self.checkBox_2.setText(QCoreApplication.translate("Form", u"\u542f\u7528\u65b9\u5757\u629b\u5c04\u7ed8\u753b", None))
         self.checkBox_4.setText(QCoreApplication.translate("Form", u"\u4f7f\u7528\u5c55\u793a\u5b9e\u4f53 (\u5371\u9669)", None))
-        self.label_32.setText(QCoreApplication.translate("Form", u"<html><head/><body><p>\u5176\u539f\u7406\u662f\u7528tp\u6307\u4ee4\u6765\u63a7\u5236\u6bcf\u4e00\u4e2a\u629b\u5c04\u65b9\u5757\u7684\u8fd0\u52a8\uff0c\u542f\u7528\u8fd9\u4e00\u9009\u9879\u5c06\u751f\u6210\u6570\u767e\u500d\u7684\u6307\u4ee4\uff0c<span style=\" font-weight:700;\">\u6781\u6709\u53ef\u80fd\u5bfc\u81f4\u6e38\u620f\u5361\u6b7b</span>\u3002\u8bf7\u5c3d\u91cf\u901a\u8fc7\u91cd\u8fdb\u5b58\u6863\u6765\u52a0\u8f7d\u6570\u636e\u5305\uff0c\u4e0d\u8981\u4f7f\u7528reload\u3002</p></body></html>", None))
+        self.label_32.setText(QCoreApplication.translate("Form", u"<html><head/><body><p>\u5176\u539f\u7406\u662f\u7528tp\u6307\u4ee4\u6765\u63a7\u5236\u6bcf\u4e00\u4e2a\u629b\u5c04\u65b9\u5757\u7684\u8fd0\u52a8\uff0c\u542f\u7528\u8fd9\u4e00\u9009\u9879\u5c06\u751f\u6210\u6570\u767e\u500d\u7684\u6307\u4ee4\uff0c<span style=\" font-weight:700;\">\u6781\u6709\u53ef\u80fd\u5bfc\u81f4\u6e38\u620f\u5361\u6b7b</span>\uff0c\u597d\u5904\u662f\u63d0\u9ad8tick\u9891\u7387\u65f6\u4e0d\u4f1a\u53d1\u751f\u8fd0\u52a8\u5361\u987f\uff0c\u89c6\u89c9\u6548\u679c\u66f4\u597d\u3002\u5982\u8981\u4f7f\u7528\u8be5\u529f\u80fd\uff0c\u8bf7\u5c3d\u91cf\u901a\u8fc7\u91cd\u8fdb\u5b58\u6863\u6765\u52a0\u8f7d\u6570\u636e\u5305\uff0c\u4e0d\u8981\u4f7f\u7528reload\u3002</p></body></html>", None))
         self.label_16.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">Schem\u6587\u4ef6\uff1a</p></body></html>", None))
         self.pushButton_3.setText(QCoreApplication.translate("Form", u"\u5237\u65b0", None))
         self.label_15.setText(QCoreApplication.translate("Form", u"<html><head/><body><p>\uff08.schem\u6587\u4ef6\u9700\u653e\u5165\u7a0b\u5e8f\u76ee\u5f55\u7684resources\u6587\u4ef6\u5939\u4e2d\uff09</p></body></html>", None))

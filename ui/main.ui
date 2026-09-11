@@ -445,6 +445,26 @@ li.checked::marker { content: &quot;\2612&quot;; }
               </layout>
              </item>
              <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_31">
+               <item>
+                <widget class="QLabel" name="label_33">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;指示器方块大小：&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_8"/>
+               </item>
+              </layout>
+             </item>
+             <item>
               <layout class="QHBoxLayout" name="horizontalLayout_2">
                <item>
                 <widget class="QLabel" name="label_3">
@@ -544,7 +564,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                   </sizepolicy>
                  </property>
                  <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;其原理是用tp指令来控制每一个抛射方块的运动，启用这一选项将生成数百倍的指令，&lt;span style=&quot; font-weight:700;&quot;&gt;极有可能导致游戏卡死&lt;/span&gt;。请尽量通过重进存档来加载数据包，不要使用reload。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;其原理是用tp指令来控制每一个抛射方块的运动，启用这一选项将生成数百倍的指令，&lt;span style=&quot; font-weight:700;&quot;&gt;极有可能导致游戏卡死&lt;/span&gt;，好处是提高tick频率时不会发生运动卡顿，视觉效果更好。如要使用该功能，请尽量通过重进存档来加载数据包，不要使用reload。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="wordWrap">
                   <bool>true</bool>
