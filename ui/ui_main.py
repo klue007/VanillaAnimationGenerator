@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainjuTbPA.ui'
+## Form generated from reading UI file 'mainUnaKLW.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.11.2
 ##
@@ -581,6 +581,13 @@ class Ui_Form(object):
 
         self.horizontalLayout_20.addLayout(self.verticalLayout_14)
 
+        self.line_4 = QFrame(self.tab_4)
+        self.line_4.setObjectName(u"line_4")
+        self.line_4.setFrameShadow(QFrame.Shadow.Plain)
+        self.line_4.setFrameShape(QFrame.Shape.VLine)
+
+        self.horizontalLayout_20.addWidget(self.line_4)
+
         self.verticalLayout_17 = QVBoxLayout()
         self.verticalLayout_17.setObjectName(u"verticalLayout_17")
         self.horizontalLayout_21 = QHBoxLayout()
@@ -637,6 +644,13 @@ class Ui_Form(object):
 
 
         self.horizontalLayout_20.addLayout(self.verticalLayout_17)
+
+        self.line_5 = QFrame(self.tab_4)
+        self.line_5.setObjectName(u"line_5")
+        self.line_5.setFrameShadow(QFrame.Shadow.Plain)
+        self.line_5.setFrameShape(QFrame.Shape.VLine)
+
+        self.horizontalLayout_20.addWidget(self.line_5)
 
         self.verticalLayout_15 = QVBoxLayout()
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
@@ -768,6 +782,7 @@ class Ui_Form(object):
 
         self.verticalLayout_2.setStretch(0, 1)
         self.verticalLayout_2.setStretch(1, 1)
+        self.verticalLayout_2.setStretch(2, 1)
         self.tabWidget.addTab(self.tab_piano, "")
         self.tab_6 = QWidget()
         self.tab_6.setObjectName(u"tab_6")
