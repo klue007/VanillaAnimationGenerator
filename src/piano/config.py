@@ -430,7 +430,10 @@ PIANO_MINI_CONFIG_OVERRIDE = {
         "at @s "
         "run playsound {sound} master @a ~ ~ ~2 {vol} 1"
     ),
-    "NOTE_POS": NOTE_POS_MINI
+    "NOTE_POS": NOTE_POS_MINI,
+    "WATERFALL_HEIGHT": 4.0,
+    "WATERFALL_TICK" : 100,
+    "WATERFALL_BLOCK_SIZE": 0.05,
 }
 
 PIANO_VORTEX_CONFIG_OVERRIDE = {
