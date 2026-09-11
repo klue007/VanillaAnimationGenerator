@@ -1,7 +1,6 @@
 from src.util import Timeline, MovingEntity
 from src.piano.note import Note
 from src.piano.config import PianoConfig
-import math
 from src.util import MCUUIDManager, MCUUID
 
 class PianoDisplayer():
@@ -25,9 +24,9 @@ class PianoDisplayer():
         else:
             moving_entity = MovingEntity(start_x, start_y, start_z, end_x, end_y, end_z, self.uuid)
             if config.displayer_vortex:
-                output.merge(moving_entity.get_vortex_parabolic_timeline(peak_height, note.mc_tick - time, time, 0, 0))
+                output.merge(moving_entity.get_vortex_parabolic_timeline(peak_height, note.mc_tick - time, note.mc_tick, 0, 0))
             else:
-                output.merge(moving_entity.get_parabolic_timeline(peak_height, note.mc_tick - time, time))
+                output.merge(moving_entity.get_parabolic_timeline(peak_height, note.mc_tick - time, note.mc_tick))
         self.current_tick = note.mc_tick
         self.current_note = note.midi_number
         return output

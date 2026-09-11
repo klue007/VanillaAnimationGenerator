@@ -150,7 +150,7 @@ class VAGWindow(QWidget):
         self.ui.spinBox_10.setValue(cfg.painting_base_pos[2])
         self.ui.spinBox_7.setValue(cfg.block_splits)
         self.ui.checkBox_3.setChecked(cfg.waterfall)
-        self.ui.comboBox_3.setCurrentIndex(cfg.waterfall_mode)
+        self.ui.comboBox_4.setCurrentIndex(cfg.waterfall_mode)
         self.ui.spinBox_11.setValue(cfg.waterfall_tick)
         self.ui.doubleSpinBox_6.setValue(cfg.waterfall_height)
         self.ui.lineEdit_3.setText(cfg.waterfall_block)
@@ -223,7 +223,7 @@ class VAGWindow(QWidget):
             self.piano_logger.log_info("数据包名称: " + cfg.datapack_name)
 
         cfg.waterfall = self.ui.checkBox_3.isChecked()
-        cfg.waterfall_mode = self.ui.comboBox_3.currentIndex()
+        cfg.waterfall_mode = self.ui.comboBox_4.currentIndex()
         cfg.waterfall_tick = self.ui.spinBox_11.value()
         cfg.waterfall_height = self.ui.doubleSpinBox_6.value()
         cfg.waterfall_block = self.ui.lineEdit_3.text()
