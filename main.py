@@ -156,7 +156,7 @@ class VAGWindow(QWidget):
         self.ui.lineEdit_3.setText(cfg.waterfall_block)
         self.ui.doubleSpinBox_7.setValue(cfg.waterfall_block_size)
         self.ui.spinBox_12.setValue(cfg.waterfall_block_transition_tick)
-
+        self.ui.checkBox_4.setChecked(cfg.block_painting_use_display_entity)
 
     def on_export_finish(self):
         self.is_exporting = False
@@ -227,6 +227,8 @@ class VAGWindow(QWidget):
         cfg.waterfall_block = self.ui.lineEdit_3.text()
         cfg.waterfall_block_size = self.ui.doubleSpinBox_7.value()
         cfg.waterfall_block_transition_tick = self.ui.spinBox_12.value()
+
+        cfg.block_painting_use_display_entity = self.ui.checkBox_4.isChecked()
 
         self.is_exporting = True
         self.ui.pushButton.setEnabled(False)

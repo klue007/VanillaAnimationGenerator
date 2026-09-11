@@ -510,17 +510,48 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <item>
             <layout class="QVBoxLayout" name="verticalLayout_16">
              <item>
-              <widget class="QCheckBox" name="checkBox_2">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="text">
-                <string>启用方块抛射绘画</string>
-               </property>
-              </widget>
+              <layout class="QVBoxLayout" name="verticalLayout_19">
+               <item>
+                <widget class="QCheckBox" name="checkBox_2">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>启用方块抛射绘画</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_18">
+               <item>
+                <widget class="QCheckBox" name="checkBox_4">
+                 <property name="text">
+                  <string>使用展示实体 (危险)</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_32">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;其原理是用tp指令来控制每一个抛射方块的运动，启用这一选项将生成数百倍的指令，&lt;span style=&quot; font-weight:700;&quot;&gt;极有可能导致游戏卡死&lt;/span&gt;。请尽量通过重进存档来加载数据包，不要使用reload。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </item>
             </layout>
            </item>

@@ -46,14 +46,14 @@ def get_timeline(note_list: list[Note], block_list: BlockGroup, config: PianoCon
 
             for block in chunk_blocks:
                 block_tag_number += 1
-                # falling block entity:
-                #output_timeline.merge(get_falling_block_command(start_x,start_y,start_z, block, vy, note.mc_tick, block_tag_number))
-                # display entity:
-                output_timeline.merge(get_paint_block_timeline(x0, y0, z0, vy, note.mc_tick, block, uuid_manager))
+                if config.block_painting_use_display_entity:
+                    output_timeline.merge(get_paint_block_timeline(x0, y0, z0, vy, note.mc_tick, block, uuid_manager))
+                else:
+                    output_timeline.merge(get_falling_block_command(x0, y0, z0, block, vy, note.mc_tick, block_tag_number))
             current_block_index += 1
 
     if config.displayer:
-        output_timeline.merge(get_displayer_timeline(note_list, config))
+        output_timeline.merge(get_displayer_timeline(note_list, config, uuid_manager))
     logger.log_success("所有命令已生成!")
     return output_timeline
 

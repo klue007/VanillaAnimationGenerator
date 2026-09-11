@@ -378,6 +378,7 @@ DEFAULT_PIANO_SETTINGS = {
     "BASE_VOLUME": 1.0,
     "MIN_VOLUME": 0.20,
     "BLOCK_SPLITS": 3200,
+    "BLOCK_PAINTING_USE_DISPLAY_ENTITY": False,
     "SCOREBOARD_TPL": (
         "scoreboard players set @s "
         "note_{note_num} {tick_len}"
@@ -399,7 +400,7 @@ DEFAULT_PIANO_SETTINGS = {
 
     "DISPLAYER_KILL_AREA": "",
     "DISPLAYER_PEAK_HEIGHT": 0.0,
-    "DISPLAYER_SUMMON_CMD": "",
+    "DISPLAYER_SIZE": 1.0,
     "PLAYSOUND_TPL": "",
     "BLOCK_PAINTING": False,
     "DISPLAYER_VORTEX": False,
@@ -410,7 +411,7 @@ DEFAULT_PIANO_SETTINGS = {
 PIANO_CONFIG_OVERRIDE = {
     "DISPLAYER_KILL_AREA": "dx=-22,dy=25,dz=162",
     "DISPLAYER_PEAK_HEIGHT": 10.0,
-    "DISPLAYER_SUMMON_CMD": "summon item_display ~ ~ ~ {{item:{{id:\"{displayer_block}\"}},transformation:{{left_rotation:[0.0f,0.0f,0.0f,1.0f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[1.0f,1.0f,1.0f],translation:[0.0f,0.0f,0.0f]}},Tags:[\"piano_displayer\",\"piano_displayer_{id}\"],Glowing:1b,brightness:{{sky:15,block:15}},teleport_duration:1}}",
+    "DISPLAYER_SIZE": 1.0,
     "PLAYSOUND_TPL": (
         "execute "
         "positioned ~100 ~-20 ~-20 as @a[dx=-180,dy=100,dz=197] at @s "
@@ -423,7 +424,7 @@ PIANO_MINI_CONFIG_OVERRIDE = {
     "MARKER_TAG": "keyboard_v2_console",
     "DISPLAYER_KILL_AREA": "dx=2,dy=2,dz=5",
     "DISPLAYER_PEAK_HEIGHT": 0.1,
-    "DISPLAYER_SUMMON_CMD": "summon item_display ~ ~1 ~ {{item:{{id:\"{displayer_block}\"}},transformation:{{left_rotation:[0.0f,0.0f,0.0f,1.0f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[0.03f,0.03f,0.03f],translation:[0.0f,0.0f,0.0f]}},Tags:[\"piano_displayer\",\"piano_displayer_{id}\"],Glowing:1b,brightness:{{sky:15,block:15}},teleport_duration:1}}",
+    "DISPLAYER_SIZE": 0.03,
     "PLAYSOUND_TPL": (
         "execute "
         "at @s "
@@ -436,7 +437,7 @@ PIANO_VORTEX_CONFIG_OVERRIDE = {
     "MARKER_TAG": "keyboard_v2_console",
     "DISPLAYER_KILL_AREA": "distance=..16",
     "DISPLAYER_PEAK_HEIGHT": 2.5,
-    "DISPLAYER_SUMMON_CMD": "summon item_display ~ ~1 ~ {{item:{{id:\"{displayer_block}\"}},transformation:{{left_rotation:[0.0f,0.0f,0.0f,1.0f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[0.5f,0.5f,0.5f],translation:[0.0f,0.0f,0.0f]}},Tags:[\"piano_displayer\",\"piano_displayer_{id}\"],Glowing:1b,brightness:{{sky:15,block:15}}}}",
+    "DISPLAYER_SIZE": 0.5,
     "PLAYSOUND_TPL": (
         "execute "
         "at @s as @a[distance=..45] at @s "
@@ -450,7 +451,7 @@ PIANO_LARGE_CONFIG_OVERRIDE = {
     "MARKER_TAG": "keyboard_v2_console",
     "DISPLAYER_KILL_AREA": "dx=22,dy=25,dz=162",
     "DISPLAYER_PEAK_HEIGHT": 8.0,
-    "DISPLAYER_SUMMON_CMD": "summon item_display ~ ~1 ~ {{item:{{id:\"{displayer_block}\"}},transformation:{{left_rotation:[0.0f,0.0f,0.0f,1.0f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[1.0f,1.0f,1.0f],translation:[0.0f,0.0f,0.0f]}},Tags:[\"piano_displayer\",\"piano_displayer_{id}\"],Glowing:1b,brightness:{{sky:15,block:15}},teleport_duration:1}}",
+    "DISPLAYER_SIZE": 1.0,
     "PLAYSOUND_TPL": (
         "execute "
         "positioned ~100 ~-20 ~-20 as @a[dx=-180,dy=100,dz=197] at @s "
@@ -474,7 +475,7 @@ class PianoConfig():
         self.displayer_count_left = cfg_data["DISPLAYER_COUNT_LEFT"]
         self.displayer_peak_height = cfg_data["DISPLAYER_PEAK_HEIGHT"]
         self.displayer_max_moving_tick = cfg_data["DISPLAYER_MAX_MOVING_TICK"]
-        self.displayer_summon_cmd = cfg_data["DISPLAYER_SUMMON_CMD"]
+        self.displayer_size = cfg_data["DISPLAYER_SIZE"]
         self.tick_rate = cfg_data["TICK_RATE"]
         self.allow_durations = cfg_data["ALLOW_DURATIONS"]
         self.sound_namespace = cfg_data["SOUND_NAMESPACE"]
@@ -503,6 +504,7 @@ class PianoConfig():
         self.waterfall_block_size = cfg_data["WATERFALL_BLOCK_SIZE"]
         self.waterfall_block_transition_tick = cfg_data["WATERFALL_BLOCK_TRANSITION_TICK"]
         self.waterfall_mode = cfg_data["WATERFALL_MODE"]
+        self.block_painting_use_display_entity = cfg_data["BLOCK_PAINTING_USE_DISPLAY_ENTITY"]
 
 
 class PianoConfigPresets():

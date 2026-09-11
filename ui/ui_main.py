@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainUnaKLW.ui'
+## Form generated from reading UI file 'mainVEnLIq.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.11.2
 ##
@@ -374,6 +374,8 @@ class Ui_Form(object):
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
         self.verticalLayout_16 = QVBoxLayout()
         self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.verticalLayout_19 = QVBoxLayout()
+        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
         self.checkBox_2 = QCheckBox(self.tab_3)
         self.checkBox_2.setObjectName(u"checkBox_2")
         sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
@@ -382,7 +384,28 @@ class Ui_Form(object):
         sizePolicy4.setHeightForWidth(self.checkBox_2.sizePolicy().hasHeightForWidth())
         self.checkBox_2.setSizePolicy(sizePolicy4)
 
-        self.verticalLayout_16.addWidget(self.checkBox_2)
+        self.verticalLayout_19.addWidget(self.checkBox_2)
+
+
+        self.verticalLayout_16.addLayout(self.verticalLayout_19)
+
+        self.verticalLayout_18 = QVBoxLayout()
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.checkBox_4 = QCheckBox(self.tab_3)
+        self.checkBox_4.setObjectName(u"checkBox_4")
+
+        self.verticalLayout_18.addWidget(self.checkBox_4)
+
+        self.label_32 = QLabel(self.tab_3)
+        self.label_32.setObjectName(u"label_32")
+        sizePolicy3.setHeightForWidth(self.label_32.sizePolicy().hasHeightForWidth())
+        self.label_32.setSizePolicy(sizePolicy3)
+        self.label_32.setWordWrap(True)
+
+        self.verticalLayout_18.addWidget(self.label_32)
+
+
+        self.verticalLayout_16.addLayout(self.verticalLayout_18)
 
 
         self.horizontalLayout_15.addLayout(self.verticalLayout_16)
@@ -893,6 +916,8 @@ class Ui_Form(object):
         self.label_4.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u53f3\u624b\u663e\u793a\u5668\u6570\u91cf\uff1a</p></body></html>", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_2), QCoreApplication.translate("Form", u"\u7434\u952e\u6307\u793a\u5668\u8bbe\u7f6e", None))
         self.checkBox_2.setText(QCoreApplication.translate("Form", u"\u542f\u7528\u65b9\u5757\u629b\u5c04\u7ed8\u753b", None))
+        self.checkBox_4.setText(QCoreApplication.translate("Form", u"\u4f7f\u7528\u5c55\u793a\u5b9e\u4f53 (\u5371\u9669)", None))
+        self.label_32.setText(QCoreApplication.translate("Form", u"<html><head/><body><p>\u5176\u539f\u7406\u662f\u7528tp\u6307\u4ee4\u6765\u63a7\u5236\u6bcf\u4e00\u4e2a\u629b\u5c04\u65b9\u5757\u7684\u8fd0\u52a8\uff0c\u542f\u7528\u8fd9\u4e00\u9009\u9879\u5c06\u751f\u6210\u6570\u767e\u500d\u7684\u6307\u4ee4\uff0c<span style=\" font-weight:700;\">\u6781\u6709\u53ef\u80fd\u5bfc\u81f4\u6e38\u620f\u5361\u6b7b</span>\u3002\u8bf7\u5c3d\u91cf\u901a\u8fc7\u91cd\u8fdb\u5b58\u6863\u6765\u52a0\u8f7d\u6570\u636e\u5305\uff0c\u4e0d\u8981\u4f7f\u7528reload\u3002</p></body></html>", None))
         self.label_16.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">Schem\u6587\u4ef6\uff1a</p></body></html>", None))
         self.pushButton_3.setText(QCoreApplication.translate("Form", u"\u5237\u65b0", None))
         self.label_15.setText(QCoreApplication.translate("Form", u"<html><head/><body><p>\uff08.schem\u6587\u4ef6\u9700\u653e\u5165\u7a0b\u5e8f\u76ee\u5f55\u7684resources\u6587\u4ef6\u5939\u4e2d\uff09</p></body></html>", None))

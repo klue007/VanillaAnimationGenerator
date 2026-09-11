@@ -1,9 +1,8 @@
 
-from .mcuuid import MCUUIDManager
 from .timeline import Timeline
-from .block import Block
 from .falling_block import falling_block_calculate
 from .mcuuid import MCUUID
+import math
 
 class MovingEntity():
     """
@@ -44,7 +43,52 @@ class MovingEntity():
             z += vz
 
             t += 1
-            tp_cmd = f"tp {self.mcuuid.to_uuid_string()} {x:.5f} {y:.5f} {z:.5f}"
+            tp_cmd = f"tp {self.mcuuid.to_uuid_string()} ~{x:.3f} ~{y:.3f} ~{z:.3f}"
             output.add_command(t, tp_cmd)
 
         return output
+
+
+    def get_straight_line_timeline(self, start_tick: int, end_tick: int) -> Timeline:
+        output = Timeline({})
+        delta_tick = end_tick - start_tick
+        for tick in range(0, delta_tick+1):
+            t = tick / delta_tick
+            x = self.x0 + (self.x1 - self.x0) * t
+            y = self.y0 + (self.y1 - self.x0) * t
+            z = self.z0 + (self.z1 - self.z0) * t
+            output.add_command(tick + start_tick, f"tp {self.mcuuid.to_uuid_string()} ~{x:.3f} ~{y:.3f} ~{z:.3f}")
+        return output
+
+
+    def get_parabolic_timeline(self, dy: float, start_tick: int, end_tick: int) -> Timeline:
+        output = Timeline({})
+        delta_tick = end_tick - start_tick
+        for tick in range(0, delta_tick+1):
+            t = tick / delta_tick
+            x = self.x0 + (self.x1 - self.x0) * t
+            y = self.y0 * (1 - t) + self.y1 * t + dy * 4 * t * (1 - t)
+            z = self.z0 + (self.z1 - self.z0) * t
+            output.add_command(tick + start_tick, f"tp {self.mcuuid.to_uuid_string()} ~{x:.3f} ~{y:.3f} ~{z:.3f}")
+        return output
+    
+
+    def get_vortex_parabolic_timeline(self, dy: float, start_tick: int, end_tick: int, center_x: float, center_z: float) -> Timeline:
+        output = Timeline({})
+        delta_tick = end_tick - start_tick
+        for tick in range(0, delta_tick+1):
+            t = tick / delta_tick
+            theta0 = math.atan2(self.z0 - center_z, self.x0 - center_x)
+            theta1 = math.atan2(self.z1 - center_z, self.x1 - center_x)
+            delta_raw = theta1 - theta0
+            delta = (delta_raw + math.pi) % (2 * math.pi) - math.pi
+            theta = theta0 + delta * t
+            r0 = math.hypot(self.x0 - center_x, self.z0 - center_z)
+            r1 = math.hypot(self.x1 - center_x, self.z1 - center_z)
+            r = r0 + (r1 - r0) * t
+            x = r * math.cos(theta)
+            y = self.y0 * (1 - t) + self.y1 * t + dy * 4 * t * (1 - t)
+            z = r * math.sin(theta)
+            output.add_command(tick + start_tick, f"tp {self.mcuuid.to_uuid_string()} ~{x:.3f} ~{y:.3f} ~{z:.3f}")
+        return output
+        
