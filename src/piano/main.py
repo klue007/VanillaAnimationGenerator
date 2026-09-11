@@ -13,6 +13,7 @@ from src.piano.config import PianoConfig
 from src.util import Logger
 from src.piano.waterfall import get_waterfall_timeline
 from src.util import MCUUIDManager
+from .block_painting import get_paint_block_timeline
 
 def split_list(lst: list[Block], x: int):
     it = iter(lst)
@@ -20,7 +21,7 @@ def split_list(lst: list[Block], x: int):
     part_size = (n + x -1)//x
     return [list(itertools.islice(it, part_size)) for _ in range(x)]
 
-def get_timeline(note_list: list[Note], block_list: BlockGroup, config: PianoConfig, logger: Logger) -> Timeline:
+def get_timeline(note_list: list[Note], block_list: BlockGroup, config: PianoConfig, logger: Logger, uuid_manager: MCUUIDManager) -> Timeline:
     note_list.sort(key=lambda x: x.start_second)
     block_list_split = split_list(block_list.get_list(), config.block_splits)
     output_timeline = Timeline({})
@@ -37,19 +38,22 @@ def get_timeline(note_list: list[Note], block_list: BlockGroup, config: PianoCon
         output_timeline.add_command(note.mc_tick, config.scoreboard_tpl.format(note_num=note.midi_number, tick_len=int(note.ingame_duration*20)))
 
         if len(block_list_split) > current_block_index and config.block_painting:
-            start_x = config.note_pos[note.midi_number][0]
-            start_y = config.note_pos[note.midi_number][1]
-            start_z = config.note_pos[note.midi_number][2]
-            motion_val = config.motion_y + random.random() * config.motion_y_random
+            x0 = config.note_pos[note.midi_number][0]
+            y0 = config.note_pos[note.midi_number][1]
+            z0 = config.note_pos[note.midi_number][2]
+            vy = config.motion_y + random.random() * config.motion_y_random
             chunk_blocks = block_list_split[current_block_index]
 
             for block in chunk_blocks:
                 block_tag_number += 1
-                output_timeline.merge_absolute(get_falling_block_command(start_x,start_y,start_z, block, motion_val, note.mc_tick, block_tag_number))
+                # falling block entity:
+                #output_timeline.merge(get_falling_block_command(start_x,start_y,start_z, block, vy, note.mc_tick, block_tag_number))
+                # display entity:
+                output_timeline.merge(get_paint_block_timeline(x0, y0, z0, vy, note.mc_tick, block, uuid_manager))
             current_block_index += 1
 
     if config.displayer:
-        output_timeline.merge_absolute(get_displayer_timeline(note_list, config))
+        output_timeline.merge(get_displayer_timeline(note_list, config))
     logger.log_success("所有命令已生成!")
     return output_timeline
 
@@ -58,7 +62,8 @@ def write_datapack(datapack: DatapackManager, scoreboard_name: str, config:Piano
     reset_lines = [
         f"scoreboard players set @e[type=marker,tag={config.marker_tag},limit=1,sort=nearest] {scoreboard_name} 0",
         f"execute at @e[type=marker,tag={config.marker_tag},limit=1,sort=nearest] positioned ~2 ~-2 ~-2 run kill @e[tag=piano_displayer,{config.displayer_kill_area}]",
-        f"execute at @e[type=marker,tag={config.marker_tag},limit=1,sort=nearest] positioned ~2 ~-2 ~-2 run kill @e[tag=piano_waterfall]",
+        f"execute at @e[type=marker,tag={config.marker_tag},limit=1,sort=nearest] run kill @e[tag=piano_waterfall]",
+        f"execute at @e[type=marker,tag={config.marker_tag},limit=1,sort=nearest] run kill @e[tag=piano_falling_block]",
     ]
     for n in range(21, 109):
         reset_lines.append(
@@ -130,14 +135,14 @@ def piano_main(cfg:PianoConfig, logger: Logger):
     logger.log_warn("   最大误差: {:.6f}ms".format(max_error))
     logger.log_warn("   平均误差: {:.6f}ms".format(avg_error))
 
-    piano_timeline = get_timeline(note_list, block_list, cfg, logger)
+    piano_timeline = get_timeline(note_list, block_list, cfg, logger, uuid_manager)
 
     waterfall_tick_shift = 0
     if cfg.waterfall:
         try:
             waterfall_tick_shift = note_list[0].mc_tick - cfg.waterfall_tick
             waterfall_timeline = get_waterfall_timeline(note_list, cfg, uuid_manager)
-            piano_timeline.merge_absolute(waterfall_timeline)
+            piano_timeline.merge(waterfall_timeline)
             logger.log_success(f"已生成瀑布流命令!")
             if waterfall_tick_shift <= 0:
                 piano_timeline.shift_time(1 - waterfall_tick_shift)

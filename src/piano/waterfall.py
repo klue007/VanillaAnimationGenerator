@@ -74,6 +74,6 @@ def get_waterfall_timeline(note_list: list[Note], cfg: PianoConfig, uuid_manager
             note_timeline = get_note_waterfall_timeline_horizontal(note, cfg, tag_number, uuid_manager)
         else:
             note_timeline = get_note_waterfall_timeline_vertical(note, cfg, tag_number, uuid_manager)
-        output.merge_absolute(note_timeline)  
+        output.merge(note_timeline)  
 
     return output

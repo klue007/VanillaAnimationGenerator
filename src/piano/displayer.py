@@ -62,7 +62,7 @@ def get_single_displayer_timeline(note_dict: dict[int, list[Note]], displayer_li
                 min(config.displayer_max_moving_tick, abs(note.mc_tick - selected_displayer.current_tick)),
                 note, config
             )
-            output.merge_absolute(tp_timeline)
+            output.merge(tp_timeline)
             available_displayer_list.remove(selected_displayer)
         if len(available_displayer_list) > 0:
             for displayer in available_displayer_list:
@@ -70,7 +70,7 @@ def get_single_displayer_timeline(note_dict: dict[int, list[Note]], displayer_li
                     min(config.displayer_max_moving_tick, abs(note_list[0].mc_tick - displayer.current_tick)),
                     note_list[0], config
                 )
-                output.merge_absolute(tp_timeline)
+                output.merge(tp_timeline)
     return output
 
 
@@ -103,6 +103,6 @@ def get_displayer_timeline(note_list: list, config: PianoConfig) -> Timeline:
 
     timeline_right = get_single_displayer_timeline(note_dict_right, right_displayer_list, config)
     timeline_left = get_single_displayer_timeline(note_dict_left, left_displayer_list, config)
-    output_timeline.merge_absolute(timeline_right)
-    output_timeline.merge_absolute(timeline_left)
+    output_timeline.merge(timeline_right)
+    output_timeline.merge(timeline_left)
     return output_timeline
