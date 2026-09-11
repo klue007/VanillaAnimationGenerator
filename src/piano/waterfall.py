@@ -8,7 +8,7 @@ def get_note_waterfall_timeline(t0: int, t1: int, t_trans: int, x0: float, y0: f
 
     dt = t1 - t0
 
-    output.add_command(t0, f"summon item_display ~{x0:.5f} ~{y0:.5f} ~{z0:.5f} {{item:{{id:\"{block}\"}},transformation:{{left_rotation:[0.0f,0.0f,0.0f,1.0f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[0.0f,0.0f,0.0f],translation:[0.0f,0.0f,0.0f]}},Tags:[\"piano_waterfall\",\"piano_waterfall_{id}\"],brightness:{{sky:15,block:15}}}}")
+    output.add_command(t0, f"summon item_display ~{x0:.5f} ~{y0:.5f} ~{z0:.5f} {{item:{{id:\"{block}\"}},transformation:{{left_rotation:[0.0f,0.0f,0.0f,1.0f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[0.0f,0.0f,0.0f],translation:[0.0f,0.0f,0.0f]}},Tags:[\"piano_waterfall\",\"piano_waterfall_{id}\"],brightness:{{sky:15,block:15}},teleport_duration:1}}")
 
     x_old = x0
     y_old = y0

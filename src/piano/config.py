@@ -410,7 +410,7 @@ DEFAULT_PIANO_SETTINGS = {
 PIANO_CONFIG_OVERRIDE = {
     "DISPLAYER_KILL_AREA": "dx=-22,dy=25,dz=162",
     "DISPLAYER_PEAK_HEIGHT": 10.0,
-    "DISPLAYER_SUMMON_CMD": "summon item_display ~ ~ ~ {{item:{{id:\"{displayer_block}\"}},transformation:{{left_rotation:[0.0f,0.0f,0.0f,1.0f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[1.0f,1.0f,1.0f],translation:[0.0f,0.0f,0.0f]}},Tags:[\"piano_displayer\",\"piano_displayer_{id}\"],Glowing:1b,brightness:{{sky:15,block:15}}}}",
+    "DISPLAYER_SUMMON_CMD": "summon item_display ~ ~ ~ {{item:{{id:\"{displayer_block}\"}},transformation:{{left_rotation:[0.0f,0.0f,0.0f,1.0f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[1.0f,1.0f,1.0f],translation:[0.0f,0.0f,0.0f]}},Tags:[\"piano_displayer\",\"piano_displayer_{id}\"],Glowing:1b,brightness:{{sky:15,block:15}},teleport_duration:1}}",
     "PLAYSOUND_TPL": (
         "execute "
         "positioned ~100 ~-20 ~-20 as @a[dx=-180,dy=100,dz=197] at @s "
@@ -423,7 +423,7 @@ PIANO_MINI_CONFIG_OVERRIDE = {
     "MARKER_TAG": "keyboard_v2_console",
     "DISPLAYER_KILL_AREA": "dx=2,dy=2,dz=5",
     "DISPLAYER_PEAK_HEIGHT": 0.1,
-    "DISPLAYER_SUMMON_CMD": "summon item_display ~ ~1 ~ {{item:{{id:\"{displayer_block}\"}},transformation:{{left_rotation:[0.0f,0.0f,0.0f,1.0f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[0.03f,0.03f,0.03f],translation:[0.0f,0.0f,0.0f]}},Tags:[\"piano_displayer\",\"piano_displayer_{id}\"],Glowing:1b,brightness:{{sky:15,block:15}}}}",
+    "DISPLAYER_SUMMON_CMD": "summon item_display ~ ~1 ~ {{item:{{id:\"{displayer_block}\"}},transformation:{{left_rotation:[0.0f,0.0f,0.0f,1.0f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[0.03f,0.03f,0.03f],translation:[0.0f,0.0f,0.0f]}},Tags:[\"piano_displayer\",\"piano_displayer_{id}\"],Glowing:1b,brightness:{{sky:15,block:15}},teleport_duration:1}}",
     "PLAYSOUND_TPL": (
         "execute "
         "at @s "
@@ -450,7 +450,7 @@ PIANO_LARGE_CONFIG_OVERRIDE = {
     "MARKER_TAG": "keyboard_v2_console",
     "DISPLAYER_KILL_AREA": "dx=22,dy=25,dz=162",
     "DISPLAYER_PEAK_HEIGHT": 8.0,
-    "DISPLAYER_SUMMON_CMD": "summon item_display ~ ~1 ~ {{item:{{id:\"{displayer_block}\"}},transformation:{{left_rotation:[0.0f,0.0f,0.0f,1.0f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[1.0f,1.0f,1.0f],translation:[0.0f,0.0f,0.0f]}},Tags:[\"piano_displayer\",\"piano_displayer_{id}\"],Glowing:1b,brightness:{{sky:15,block:15}}}}",
+    "DISPLAYER_SUMMON_CMD": "summon item_display ~ ~1 ~ {{item:{{id:\"{displayer_block}\"}},transformation:{{left_rotation:[0.0f,0.0f,0.0f,1.0f],right_rotation:[0.0f,0.0f,0.0f,1.0f],scale:[1.0f,1.0f,1.0f],translation:[0.0f,0.0f,0.0f]}},Tags:[\"piano_displayer\",\"piano_displayer_{id}\"],Glowing:1b,brightness:{{sky:15,block:15}},teleport_duration:1}}",
     "PLAYSOUND_TPL": (
         "execute "
         "positioned ~100 ~-20 ~-20 as @a[dx=-180,dy=100,dz=197] at @s "
