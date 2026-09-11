@@ -26,7 +26,7 @@ class PianoDisplayer():
         else:
             for tick_offset in range(0, time + 1):
                 t = tick_offset / time
-                if config.displayer_vortex == 1:
+                if config.displayer_vortex:
                     theta0 = math.atan2(start_z, start_x)
                     theta1 = math.atan2(end_z, end_x)
                     delta_raw = theta1 - theta0

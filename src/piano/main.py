@@ -13,6 +13,7 @@ from src.piano.note import MidiFile
 from src.piano.config import PianoConfig
 from src.util import Logger
 import time
+from src.piano.waterfall import get_waterfall_timeline
 
 def split_list(lst: list[Block], x: int):
     it = iter(lst)
@@ -36,7 +37,7 @@ def get_timeline(note_list: list[Note], block_list: BlockGroup, config: PianoCon
         output_timeline.add_command(note.mc_tick, config.playsound_tpl.format(sound=note.sound_id, vol=note.volume))
         output_timeline.add_command(note.mc_tick, config.scoreboard_tpl.format(note_num=note.midi_number, tick_len=int(note.ingame_duration*20)))
 
-        if len(block_list_split) > current_block_index and config.block_painting == 1:
+        if len(block_list_split) > current_block_index and config.block_painting:
             start_x = config.note_pos[note.midi_number][0]
             start_y = config.note_pos[note.midi_number][1]
             start_z = config.note_pos[note.midi_number][2]
@@ -48,7 +49,7 @@ def get_timeline(note_list: list[Note], block_list: BlockGroup, config: PianoCon
                 output_timeline.merge_absolute(falling_block_calculate(start_x,start_y,start_z, block, motion_val, note.mc_tick, block_tag_number))
             current_block_index += 1
 
-    if config.displayer == 1:
+    if config.displayer:
         output_timeline.merge_absolute(get_displayer_timeline(note_list, config))
     logger.log_success("所有命令已生成!")
     return output_timeline
@@ -102,7 +103,7 @@ def piano_main(cfg:PianoConfig, logger: Logger):
         return
 
     block_list = BlockGroup(None, None)
-    if cfg.block_painting == 1:
+    if cfg.block_painting:
         try:
             block_list = BlockGroup(cfg.block_path, cfg.painting_base_pos)
             block_list.sort_by_axis("y")

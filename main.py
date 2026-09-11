@@ -117,13 +117,13 @@ class VAGWindow(QWidget):
                 self.piano_logger.log_error("你未设置钢琴键盘预设!")
                 return
             case 0:
-                cfg = PianoConfig(presets.piano)
+                cfg = presets.piano
             case 1:
-                cfg = PianoConfig(presets.piano_mini)
+                cfg = presets.piano_mini
             case 2:
-                cfg = PianoConfig(presets.piano_vortex)
+                cfg = presets.piano_vortex
             case 3:
-                cfg = PianoConfig(presets.piano_large)
+                cfg = presets.piano_large
         return cfg
 
     def piano_load_preset(self, index: int):
@@ -135,13 +135,13 @@ class VAGWindow(QWidget):
         self.ui.doubleSpinBox_2.setValue(cfg.min_volume)
         self.ui.spinBox_5.setValue(cfg.note_dur_extra_ms)
         self.ui.spinBox_6.setValue(cfg.delay_ms)
-        self.ui.checkBox.setChecked(cfg.displayer == 1)
+        self.ui.checkBox.setChecked(cfg.displayer)
         self.ui.lineEdit.setText(cfg.displayer_block)
         self.ui.spinBox.setValue(cfg.displayer_count_left)
         self.ui.spinBox_2.setValue(cfg.displayer_count_right)
         self.ui.spinBox_3.setValue(cfg.displayer_max_moving_tick)
         self.ui.doubleSpinBox.setValue(cfg.displayer_peak_height)
-        self.ui.checkBox_2.setChecked(cfg.block_painting == 1)
+        self.ui.checkBox_2.setChecked(cfg.block_painting)
         self.ui.doubleSpinBox_4.setValue(cfg.motion_y)
         self.ui.doubleSpinBox_5.setValue(cfg.motion_y_random)
         self.ui.spinBox_8.setValue(cfg.painting_base_pos[0])
@@ -165,8 +165,8 @@ class VAGWindow(QWidget):
             return
 
         idx_block = self.ui.comboBox_2.currentIndex()
-        cfg.block_painting = 1 if self.ui.checkBox_2.isChecked() else 0
-        if idx_block < 0 and cfg.block_painting == 1:
+        cfg.block_painting = self.ui.checkBox_2.isChecked()
+        if idx_block < 0 and cfg.block_painting:
             self.piano_logger.log_error("请选择方块文件!")
             return
         else:
@@ -183,7 +183,7 @@ class VAGWindow(QWidget):
         cfg.min_volume = self.ui.doubleSpinBox_2.value()
         cfg.note_dur_extra_ms = self.ui.spinBox_5.value()
         cfg.delay_ms = self.ui.spinBox_6.value()
-        cfg.displayer = 1 if self.ui.checkBox.isChecked() else 0
+        cfg.displayer = self.ui.checkBox.isChecked()
         cfg.displayer_block = self.ui.lineEdit.text()
         cfg.displayer_count_left = self.ui.spinBox.value()
         cfg.displayer_count_right = self.ui.spinBox_2.value()
@@ -214,7 +214,7 @@ class VAGWindow(QWidget):
         self.is_exporting = True
         self.ui.pushButton.setEnabled(False)
         self.piano_logger.log_info(f"生成数据包使用的文件: ")
-        if cfg.block_painting == 1:
+        if cfg.block_painting:
             self.piano_logger.log_info(f"   方块文件: {cfg.block_path}")
         self.piano_logger.log_info(f"   MIDI文件: {cfg.midi_path}")
 
