@@ -122,6 +122,8 @@ class VAGWindow(QWidget):
                 cfg = PianoConfig(presets.piano_mini)
             case 2:
                 cfg = PianoConfig(presets.piano_vortex)
+            case 3:
+                cfg = PianoConfig(presets.piano_large)
         return cfg
 
     def piano_load_preset(self, index: int):

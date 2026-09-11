@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainHtANab.ui'
+## Form generated from reading UI file 'mainCcWnHG.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.11.2
 ##
@@ -726,15 +726,17 @@ class Ui_Form(object):
                         "\u8d44\u6e90\u5305\u3002</p>\n"
 "<h4 style=\" margin-top:14px; margin-bottom:6px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:medium; font-weight:700;\">\u52a8\u753b\u64ad\u653e\u64cd\u4f5c</span></h4>\n"
 "<ol style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\">\n"
-"<li style=\" margin-top:8px; margin-bottom:8px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u64ad\u653e\u4e50\u66f2\u524d\uff0c\u9700\u8981\u6267\u884c\u6307\u4ee4\u521b\u5efa\u9884\u8bbe\u94a2\u7434\u952e\u76d8\uff0c\u76ee\u524d\u63d0\u4f9b 3 \u5957\u952e\u76d8\u65b9\u6848\uff1a\n"
+"<li style=\" margin-top:8px; margin-bottom:8px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u64ad\u653e\u4e50\u66f2\u524d\uff0c\u9700\u8981\u6267\u884c\u6307\u4ee4\u521b\u5efa\u9884\u8bbe\u94a2\u7434\u952e\u76d8\uff0c\u76ee\u524d\u63d0\u4f9b 4 \u5957\u952e\u76d8\u65b9\u6848\uff1a\n"
 "<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 2;\">\n"
 "<li style=\" margin-top:4px; margin-bottom:4px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u5927\u578b\u65b9\u5757\u952e\u76d8\uff1a<span style=\" font-family:'Courier New';\">/function core"
                         ":keyboard/create</span></li>\n"
-"<li style=\" margin-top:4px; margin-bottom:4px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u5c0f\u578b\u952e\u76d8\uff1a<span style=\" font-family:'Courier New';\">/function core:keyboard_mini/create</span></li>\n"
-"<li style=\" margin-top:4px; margin-bottom:4px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u5c0f\u578b\u6da1\u65cb\u952e\u76d8\uff1a<span style=\" font-family:'Courier New';\">/function core:keyboard_mini/create_vortex</span></li></ul></li>\n"
-"<li style=\" margin-top:8px; margin-bottom:8px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u90e8\u7f72\u5b8c\u6210\u540e\uff0c\u6267\u884c\u64ad\u653e\u6307\u4ee4\u542f\u52a8\u52a8\u753b\uff1a<span style=\" font-family:'Courier New';\">/function &lt;\u81ea\u5b9a\u4e49\u6570\u636e\u5305\u540d\u79f0&gt;:start</span>\u3002\u5982\u679c\u9884\u8bbe\u7684\u64ad\u653etick\u9891\u7387\u4e0d\u662f20\uff0c\u4f60\u8fd8\u9700\u8981\u4f7f\u7528"
-                        " <span style=\" font-family:'Courier New';\">/tick rate &lt;\u64ad\u653etick\u9891\u7387&gt;</span> \u6765\u4fee\u6539\u3002</li>\n"
-"<li style=\" margin-top:8px; margin-bottom:8px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u7ec8\u6b62\u64ad\u653e\u5e76\u590d\u4f4d\u573a\u666f\uff1a<span style=\" font-family:'Courier New';\">/function &lt;\u81ea\u5b9a\u4e49\u6570\u636e\u5305\u540d\u79f0&gt;:reset</span></li></ol></body></html>", None))
+"<li style=\" margin-top:4px; margin-bottom:4px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u5c0f\u578b\u952e\u76d8\uff1a<span style=\" font-family:'Courier New';\">/function core:keyboard_v2/create</span></li>\n"
+"<li style=\" margin-top:4px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u6da1\u65cb\u952e\u76d8\uff1a<span style=\" font-family:'Courier New';\">/function core:keyboard_v2/create_vortex</span></li></ul></li>\n"
+"<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 2;\">\n"
+"<li style=\" margin-top:4px; margin-bottom:4px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u5927\u578b\u952e\u76d8\uff1a<span style=\" font-family:'Courier New';\">/function core:keyboard_v2/create_large</span></li></ul>\n"
+"<li style=\" margin-top:8px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-inden"
+                        "t:0px;\">\u90e8\u7f72\u5b8c\u6210\u540e\uff0c\u6267\u884c\u64ad\u653e\u6307\u4ee4\u542f\u52a8\u52a8\u753b\uff1a<span style=\" font-family:'Courier New';\">/function &lt;\u81ea\u5b9a\u4e49\u6570\u636e\u5305\u540d\u79f0&gt;:start</span>\u3002\u5982\u679c\u9884\u8bbe\u7684\u64ad\u653etick\u9891\u7387\u4e0d\u662f20\uff0c\u4f60\u8fd8\u9700\u8981\u4f7f\u7528 <span style=\" font-family:'Courier New';\">/tick rate &lt;\u64ad\u653etick\u9891\u7387&gt;</span> \u6765\u4fee\u6539\u3002</li>\n"
+"<li style=\" margin-top:8px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u7ec8\u6b62\u64ad\u653e\uff1a<span style=\" font-family:'Courier New';\">/function &lt;\u81ea\u5b9a\u4e49\u6570\u636e\u5305\u540d\u79f0&gt;:reset</span></li></ol></body></html>", None))
         self.label_2.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u9884\u8bbe\u914d\u7f6e\uff1a</p></body></html>", None))
         self.label_10.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u6700\u5927\u97f3\u6548\u97f3\u91cf\uff1a</p></body></html>", None))
         self.label_11.setText(QCoreApplication.translate("Form", u"<html><head/><body><p align=\"right\">\u6700\u5c0f\u97f3\u6548\u97f3\u91cf\uff1a</p></body></html>", None))
