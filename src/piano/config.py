@@ -454,6 +454,7 @@ PIANO_LARGE_CONFIG_OVERRIDE = {
     "MARKER_TAG": "keyboard_v2_console",
     "DISPLAYER_KILL_AREA": "dx=22,dy=25,dz=162",
     "DISPLAYER_PEAK_HEIGHT": 8.0,
+    "PAINTING_BASE_POS": [50, -19, -51],
     "DISPLAYER_SIZE": 1.0,
     "PLAYSOUND_TPL": (
         "execute "
