@@ -41,10 +41,10 @@ def get_timeline(note_list: list[Note], block_list: BlockGroup, config: PianoCon
             x0 = config.note_pos[note.midi_number][0]
             y0 = config.note_pos[note.midi_number][1]
             z0 = config.note_pos[note.midi_number][2]
-            vy = config.motion_y + random.random() * config.motion_y_random
             chunk_blocks = block_list_split[current_block_index]
 
             for block in chunk_blocks:
+                vy = config.motion_y + random.random() * config.motion_y_random
                 block_tag_number += 1
                 if config.block_painting_use_display_entity:
                     output_timeline.merge(get_paint_block_timeline(x0, y0, z0, vy, note.mc_tick, block, uuid_manager))
