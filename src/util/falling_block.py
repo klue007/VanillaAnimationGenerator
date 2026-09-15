@@ -39,7 +39,7 @@ def falling_block_calculate(
         raise RuntimeError("Falling time is too long.")
 
     q = 0.98
-    sum_geo = (1.0 - (q ** T)) / (1.0 - q)
+    sum_geo = q * (1.0 - (q ** T)) / (1.0 - q)
     best_vx = (x2 - x1) / sum_geo
     best_vz = (z2 - z1) / sum_geo
 
@@ -51,8 +51,7 @@ def get_falling_block_command(
     block: Block,
     mot_y: float,
     tick: int,
-    index: int,
-    eps: float = 1e-5
+    index: int
 ) -> Timeline:
     best_vx, best_vz, time = falling_block_calculate(x1, y1, z1, float(block.x), float(block.y), float(block.z), mot_y)
     cmd = (
