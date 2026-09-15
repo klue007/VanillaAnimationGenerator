@@ -132,8 +132,8 @@ def piano_main(cfg:PianoConfig, logger: Logger):
     
     max_error, avg_error = get_error(note_list)
     logger.log_warn("音符时间误差:".format(max_error,avg_error))
-    logger.log_warn("   最大误差: {:.6f}ms".format(max_error))
-    logger.log_warn("   平均误差: {:.6f}ms".format(avg_error))
+    logger.log_warn("   最大误差: {:.6f}ms".format(max_error * 1000))
+    logger.log_warn("   平均误差: {:.6f}ms".format(avg_error * 1000))
 
     piano_timeline = get_timeline(note_list, block_list, cfg, logger, uuid_manager)
 
