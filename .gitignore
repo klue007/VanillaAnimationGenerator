@@ -3,3 +3,5 @@ resources/*
 genpy.py
 *.pyc
 output/*
+build.bat
+build/*
